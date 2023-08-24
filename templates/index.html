@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cryptic</title>
+    <link rel="icon" type="image/x-icon" href="Images/fevicon.png" />
+    <link rel="icon" type="image/x-icon" href="Images/fevi-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}"/>
+  </head>
+
+  <!-- -----------------------------------------------------------------------------------------------
+        Body
+       -------------------------------------------------------------------------------------------------->
+  <body>
+    <!-- -----------------------------------------------------------------------------------------------
+        Header
+       -------------------------------------------------------------------------------------------------->
+    <header>
+      <img src="static/Picsart_23-01-29_23-38-25-937.png" class="logo" />
+       <!-- -----------------------------------------------------------------------------------------------
+        Navigation Bar
+---------------------------------------------------------------------------------------------------->
+      <nav class="navigation">
+        <a
+          href="https://amithegde3.github.io/Cryptic_Mock-Crypto-Trading/Trade_page/"
+          target="_blank"
+          >Trade</a
+        >
+        <a href="#test">Testimonials</a>
+        <a href="#feat">Featured In</a>
+        <a
+          href="https://amithegde3.github.io/Cryptic_Mock-Crypto-Trading/About_page/"
+          target="_blank"
+          >About Us</a
+        >
+        <button class="btn-login">Login</button>
+      </nav>
+    </header>
+
+    <!-- -----------------------------------------------------------------------------------------------
+        Parallax and Login
+---------------------------------------------------------------------------------------------------->
+
+    <div class="back-img">
+      <img
+        src="Images/BEAR_BULL.jpg"
+        class="hill1"
+        alt="background"
+      />
+      <h1><span id="text">CRYPTIC</span></h1>
+      <img src="Images/final.png" class="hill2" alt="overlay" />
+    </div>
+    <div class="parallax">
+      <div class="wrapper">
+        <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+        <div class="form-box login">
+          <h2>Login</h2>
+          <form action="#">
+            <div class="input-box">
+              <span class="icon"><ion-icon name="mail"></ion-icon></span>
+              <input type="email" required />
+              <label>Email</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+              <input type="password" required />
+              <label>Password</label>
+            </div>
+            <div class="remember-forget">
+              <label><input type="checkbox" />Remember me</label>
+              <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+            <div class="login-register">
+              <p>
+                Don't have an account?
+                <a href="#" class="register-link">Register</a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- -----------------------------------------------------------------------------------------------
+        Hero Section
+       -------------------------------------------------------------------------------------------------->
+
+    <main>
+      <section class="section-hero">
+        <div class="hero">
+          <div class="hero-text-box">
+            <h1 class="heading-primary">
+              Cryptic: where your money works for you, 24/7!
+            </h1>
+            <p class="hero-description">
+              The smart 365-days-per-year trading subscription that will make
+              your finances healthy again. Tailored to your personal tastes and
+              exchange currencies.
+            </p>
+            <a href="#cta" class="btn btn--full margin-right-sm"
+              >Start making money</a
+            >
+
+            <a href="#how" class="btn btn--outline">Learn more ↓</a>
+            <div class="delivered-meals">
+              <div class="delivered-imgs">
+                <img
+                  src="Images/customers/customer-1.jpg"
+                  alt="Customer photo"
+                />
+                <img
+                  src="Images/customers/customer-2.jpg"
+                  alt="Customer photo"
+                />
+                <img
+                  src="Images/customers/customer-3.jpg"
+                  alt="Customer photo"
+                />
+                <img
+                  src="Images/customers/customer-4.jpg"
+                  alt="Customer photo"
+                />
+                <img
+                  src="Images/customers/customer-5.jpg"
+                  alt="Customer photo"
+                />
+                <img
+                  src="Images/customers/customer-6.jpg"
+                  alt="Customer photo"
+                />
+              </div>
+              <p class="delivered-text">
+                <span>250,000+</span> connections to be made!
+              </p>
+            </div>
+          </div>
+          <div class="hero-img-box">
+            <picture>
+              <source
+                srcset="
+                  Images/Aditi_Phaneesh_a_lady_working_at_a_trading_office_showing_graph_6cf2e872-12cd-4102-a7fa-b11dfcca070a.png
+                "
+                type="image/png"
+              />
+              <source
+                srcset="
+                  Images/Aditi_Phaneesh_a_lady_working_at_a_trading_office_showing_graph_6cf2e872-12cd-4102-a7fa-b11dfcca070a.png
+                "
+                type="image/png"
+              />
+
+              <img
+                src="Images/Aditi_Phaneesh_a_lady_working_at_a_trading_office_showing_graph_6cf2e872-12cd-4102-a7fa-b11dfcca070a.png"
+                class="hero-img"
+                alt="Woman working at a crypto office"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+      <!-- -----------------------------------------------------------------------------------------------
+        Featured In Section
+       -------------------------------------------------------------------------------------------------->
+
+      <section class="section-featured" id="feat">
+        <div class="container">
+          <h2 class="heading-featured-in">As featured in</h2>
+          <div class="container-features">
+            <div class="logos">
+              <img src="Images/logos/techcrunch.png" alt="Techcrunch logo" />
+              <img
+                src="Images/logos/business-insider.png"
+                alt="Business Insider logo"
+              />
+              <img
+                src="Images/logos/the-new-york-times.png"
+                alt="The New York Times logo"
+              />
+              <img src="Images/logos/forbes.png" alt="Forbes logo" />
+              <img src="Images/logos/usa-today.png" alt="USA Today logo" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- -----------------------------------------------------------------------------------------------
+       Testimonials Section
+       -------------------------------------------------------------------------------------------------->
+
+      <section class="section-testimonials" id="testimonials">
+        <div class="testimonials-container">
+          <span class="subheading" id="test">Testimonials</span>
+          <h2 class="testimonial-heading">
+            Once you try it, you can't go back
+          </h2>
+
+          <div class="testimonials">
+            <figure class="testimonial">
+              <img
+                class="testimonial-img"
+                alt="Photo of customer Dave Bryson"
+                src="Images/customers/dave.jpg"
+              />
+              <blockquote class="testimonial-text">
+                I've been using this website for a few months now and I couldn't
+                be happier with the speed and security of my transactions!
+              </blockquote>
+              <p class="testimonial-name">— Hardik Pandya</p>
+            </figure>
+
+            <figure class="testimonial">
+              <img
+                class="testimonial-img"
+                alt="Photo of customer Ben Hadley"
+                src="Images/customers/ben.jpg"
+              />
+              <blockquote class="testimonial-text">
+                I've never had any issues with this website, it's so easy to
+                navigate and I feel confident that my investments are safe.
+              </blockquote>
+              <p class="testimonial-name">— Donald Trump</p>
+            </figure>
+
+            <figure class="testimonial">
+              <img
+                class="testimonial-img"
+                alt="Photo of customer Steve Miller"
+                src="Images/customers/steve.jpg"
+              />
+              <blockquote class="testimonial-text">
+                Cryptic is a life saver! I just started dealing with
+                cryptocurrency and I am already well on my way to making
+                profits!
+              </blockquote>
+              <p class="testimonial-name">— Amogh Ananda</p>
+            </figure>
+
+            <figure class="testimonial">
+              <img
+                class="testimonial-img"
+                alt="Photo of customer Hannah Smith"
+                src="Images/customers/hannah.jpg"
+              />
+              <blockquote class="testimonial-text">
+                I appreciate the transparency and accountability of this
+                website, it gives me peace of mind knowing that my assets are in
+                good hands.
+              </blockquote>
+              <p class="testimonial-name">— Laxmi</p>
+            </figure>
+          </div>
+        </div>
+
+        <div class="gallery">
+          <figure class="gallery-item">
+            <img
+              src="Images/Aditi_Phaneesh_Bitcoins_being_tossed_up_in_the_air_4k_hyperreal_9fea3ed4-9c83-4fed-ab8d-8ec9c988890d.png"
+              height="300px"
+              width="300px"
+            />
+
+            <!-- <figcaption>Caption</figcaption> -->
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="Images/Amit_Chandrashekhar_Hegde_cryptocurrency_world4k_ef88cbbd-5de3-474f-99ba-dd38628cff29.png"
+              height="300px"
+              width="300px"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="Images/IMG-20230129-WA0017.jpg"
+              height="300px"
+              width="300px"
+              alt="Photo of beautifully
+            arranged food"
+            />
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <!-- -----------------------------------------------------------------------------------------------
+      Footer
+       -------------------------------------------------------------------------------------------------->
+
+    <footer class="footer">
+      <div class="container grid grid--footer">
+        <div class="logo-col">
+          <a href="#" class="footer-logo">
+            <img
+              class="logo"
+              alt="Omnifood logo"
+              src="Images/Picsart_23-01-29_23-38-25-937.png"
+            />
+          </a>
+
+          <ul class="social-links">
+            <li>
+              <a class="footer-link" href="https://www.instagram.com/amyth_hegde/"
+                ><ion-icon
+                  class="social-icon md hydrated"
+                  name="logo-instagram"
+                  role="img"
+                  aria-label="logo instagram"
+                ></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><ion-icon
+                  class="social-icon md hydrated"
+                  name="logo-facebook"
+                  role="img"
+                  aria-label="logo facebook"
+                ></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><ion-icon
+                  class="social-icon md hydrated"
+                  name="logo-twitter"
+                  role="img"
+                  aria-label="logo twitter"
+                ></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><ion-icon
+                  class="social-icon md hydrated"
+                  name="logo-whatsapp"
+                  role="img"
+                  aria-label="logo whatsapp"
+                ></ion-icon
+              ></a>
+            </li>
+          </ul>
+
+          <p class="copyright">
+            Copyright © <span class="year">2023</span> by Cryptic, Inc. All
+            rights reserved.
+          </p>
+        </div>
+
+        <div class="address-col">
+          <p class="footer-heading">Contact us</p>
+          <address class="contacts">
+            <p class="address">
+              ISE A section, BMSCE, Basavangudi, Bangalore-19
+            </p>
+            <p>
+              <a class="footer-link" href="tel:415-209-6470">9823777420</a
+              ><br />
+              <a class="footer-link" href="#">help@cryptic.com</a>
+            </p>
+          </address>
+        </div>
+
+        <nav class="nav-col">
+          <p class="footer-heading">Account</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#">Create account</a></li>
+            <li><a class="footer-link" href="#">Sign in</a></li>
+            <li><a class="footer-link" href="#">iOS app</a></li>
+            <li><a class="footer-link" href="#">Android app</a></li>
+          </ul>
+        </nav>
+
+        <nav class="nav-col">
+          <p class="footer-heading">Company</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#">About Cryptic</a></li>
+            <li><a class="footer-link" href="#">For Business</a></li>
+            <li><a class="footer-link" href="#">Trading partners</a></li>
+            <li><a class="footer-link" href="#">Careers</a></li>
+          </ul>
+        </nav>
+
+        <nav class="nav-col">
+          <p class="footer-heading">Resources</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#">Currency directory </a></li>
+            <li><a class="footer-link" href="#">Help center</a></li>
+            <li><a class="footer-link" href="#">Privacy &amp; terms</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <!-- -----------------------------------------------------------------------------------------------
+        Scripted Section
+       -------------------------------------------------------------------------------------------------->
+    <script src="script.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
