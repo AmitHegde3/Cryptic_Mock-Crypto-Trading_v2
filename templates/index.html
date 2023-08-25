@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cryptic</title>
-    <link rel="icon" type="image/x-icon" href="Images/fevicon.png" />
-    <link rel="icon" type="image/x-icon" href="Images/fevi-logo.png" />
+    <link rel="icon" type="image/x-icon" href="static/images/fevicon.png" />
+    <link rel="icon" type="image/x-icon" href="static/images/fevi-logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,20 +24,20 @@
         Header
        -------------------------------------------------------------------------------------------------->
     <header>
-      <img src="static/Picsart_23-01-29_23-38-25-937.png" class="logo" />
+      <img src="static/images/Picsart_23-01-29_23-38-25-937.png" class="logo" />
        <!-- -----------------------------------------------------------------------------------------------
         Navigation Bar
 ---------------------------------------------------------------------------------------------------->
       <nav class="navigation">
         <a
-          href="https://amithegde3.github.io/Cryptic_Mock-Crypto-Trading/Trade_page/"
+          href="{{ url_for('trade_page') }}"
           target="_blank"
           >Trade</a
         >
         <a href="#test">Testimonials</a>
         <a href="#feat">Featured In</a>
         <a
-          href="https://amithegde3.github.io/Cryptic_Mock-Crypto-Trading/About_page/"
+          href="{{ url_for('about_us') }}"
           target="_blank"
           >About Us</a
         >
@@ -51,12 +51,12 @@
 
     <div class="back-img">
       <img
-        src="Images/BEAR_BULL.jpg"
+        src="static/images/BEAR_BULL.jpg"
         class="hill1"
         alt="background"
       />
       <h1><span id="text">CRYPTIC</span></h1>
-      <img src="Images/final.png" class="hill2" alt="overlay" />
+      <img src="static/images/final.png" class="hill2" alt="overlay" />
     </div>
     <div class="parallax">
       <div class="wrapper">
@@ -114,27 +114,27 @@
             <div class="delivered-meals">
               <div class="delivered-imgs">
                 <img
-                  src="Images/customers/customer-1.jpg"
+                  src="static/images/customers/customer-1.jpg"
                   alt="Customer photo"
                 />
                 <img
-                  src="Images/customers/customer-2.jpg"
+                  src="static/images/customers/customer-2.jpg"
                   alt="Customer photo"
                 />
                 <img
-                  src="Images/customers/customer-3.jpg"
+                  src="static/images/customers/customer-3.jpg"
                   alt="Customer photo"
                 />
                 <img
-                  src="Images/customers/customer-4.jpg"
+                  src="static/images/customers/customer-4.jpg"
                   alt="Customer photo"
                 />
                 <img
-                  src="Images/customers/customer-5.jpg"
+                  src="static/images/customers/customer-5.jpg"
                   alt="Customer photo"
                 />
                 <img
-                  src="Images/customers/customer-6.jpg"
+                  src="static/images/customers/customer-6.jpg"
                   alt="Customer photo"
                 />
               </div>
@@ -147,19 +147,19 @@
             <picture>
               <source
                 srcset="
-                  Images/Aditi_Phaneesh_a_lady_working_at_a_trading_office_showing_graph_6cf2e872-12cd-4102-a7fa-b11dfcca070a.png
+                  static/images/Aditi_Phaneesh_a_lady_working_at_a_trading_office_showing_graph_6cf2e872-12cd-4102-a7fa-b11dfcca070a.png
                 "
                 type="image/png"
               />
               <source
                 srcset="
-                  Images/Aditi_Phaneesh_a_lady_working_at_a_trading_office_showing_graph_6cf2e872-12cd-4102-a7fa-b11dfcca070a.png
+                  static/images/Aditi_Phaneesh_a_lady_working_at_a_trading_office_showing_graph_6cf2e872-12cd-4102-a7fa-b11dfcca070a.png
                 "
                 type="image/png"
               />
 
               <img
-                src="Images/Aditi_Phaneesh_a_lady_working_at_a_trading_office_showing_graph_6cf2e872-12cd-4102-a7fa-b11dfcca070a.png"
+                src="static/images/Aditi_Phaneesh_a_lady_working_at_a_trading_office_showing_graph_6cf2e872-12cd-4102-a7fa-b11dfcca070a.png"
                 class="hero-img"
                 alt="Woman working at a crypto office"
               />
@@ -176,17 +176,17 @@
           <h2 class="heading-featured-in">As featured in</h2>
           <div class="container-features">
             <div class="logos">
-              <img src="Images/logos/techcrunch.png" alt="Techcrunch logo" />
+              <img src="static/images/logos/techcrunch.png" alt="Techcrunch logo" />
               <img
-                src="Images/logos/business-insider.png"
+                src="static/images/logos/business-insider.png"
                 alt="Business Insider logo"
               />
               <img
-                src="Images/logos/the-new-york-times.png"
+                src="static/images/logos/the-new-york-times.png"
                 alt="The New York Times logo"
               />
-              <img src="Images/logos/forbes.png" alt="Forbes logo" />
-              <img src="Images/logos/usa-today.png" alt="USA Today logo" />
+              <img src="static/images/logos/forbes.png" alt="Forbes logo" />
+              <img src="static/images/logos/usa-today.png" alt="USA Today logo" />
             </div>
           </div>
         </div>
@@ -208,7 +208,7 @@
               <img
                 class="testimonial-img"
                 alt="Photo of customer Dave Bryson"
-                src="Images/customers/dave.jpg"
+                src="static/images/customers/dave.jpg"
               />
               <blockquote class="testimonial-text">
                 I've been using this website for a few months now and I couldn't
@@ -221,7 +221,7 @@
               <img
                 class="testimonial-img"
                 alt="Photo of customer Ben Hadley"
-                src="Images/customers/ben.jpg"
+                src="static/images/customers/ben.jpg"
               />
               <blockquote class="testimonial-text">
                 I've never had any issues with this website, it's so easy to
@@ -234,7 +234,7 @@
               <img
                 class="testimonial-img"
                 alt="Photo of customer Steve Miller"
-                src="Images/customers/steve.jpg"
+                src="static/images/customers/steve.jpg"
               />
               <blockquote class="testimonial-text">
                 Cryptic is a life saver! I just started dealing with
@@ -248,7 +248,7 @@
               <img
                 class="testimonial-img"
                 alt="Photo of customer Hannah Smith"
-                src="Images/customers/hannah.jpg"
+                src="static/images/customers/hannah.jpg"
               />
               <blockquote class="testimonial-text">
                 I appreciate the transparency and accountability of this
@@ -263,7 +263,7 @@
         <div class="gallery">
           <figure class="gallery-item">
             <img
-              src="Images/Aditi_Phaneesh_Bitcoins_being_tossed_up_in_the_air_4k_hyperreal_9fea3ed4-9c83-4fed-ab8d-8ec9c988890d.png"
+              src="static/images/Aditi_Phaneesh_Bitcoins_being_tossed_up_in_the_air_4k_hyperreal_9fea3ed4-9c83-4fed-ab8d-8ec9c988890d.png"
               height="300px"
               width="300px"
             />
@@ -272,14 +272,14 @@
           </figure>
           <figure class="gallery-item">
             <img
-              src="Images/Amit_Chandrashekhar_Hegde_cryptocurrency_world4k_ef88cbbd-5de3-474f-99ba-dd38628cff29.png"
+              src="static/images/Amit_Chandrashekhar_Hegde_cryptocurrency_world4k_ef88cbbd-5de3-474f-99ba-dd38628cff29.png"
               height="300px"
               width="300px"
             />
           </figure>
           <figure class="gallery-item">
             <img
-              src="Images/IMG-20230129-WA0017.jpg"
+              src="static/images/IMG-20230129-WA0017.jpg"
               height="300px"
               width="300px"
               alt="Photo of beautifully
@@ -301,7 +301,7 @@
             <img
               class="logo"
               alt="Omnifood logo"
-              src="Images/Picsart_23-01-29_23-38-25-937.png"
+              src="static/images/Picsart_23-01-29_23-38-25-937.png"
             />
           </a>
 
@@ -402,7 +402,7 @@
     <!-- -----------------------------------------------------------------------------------------------
         Scripted Section
        -------------------------------------------------------------------------------------------------->
-    <script src="script.js"></script>
+    <script src="static/script/script.js"></script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"

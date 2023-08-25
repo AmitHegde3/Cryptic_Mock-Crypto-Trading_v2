@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cryptic - Trade</title>
+    <link rel="icon" type="image/x-icon" href="static/Images/fevicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/trade_page.css') }}"/>
+  </head>
+  
+  <body>
+    <header>
+      <img src="static/Images/logo.png" alt="cryptic logo" style="width: 200px;">
+      <nav class="navigation">
+        <a href="#">Trade</a>
+        <!-- <a href="https://amithegde3.github.io/Cryptic_Mock-Crypto-Trading/#test" target="_blank">Testimonials</a> -->
+        <a href="{{ url_for('test') }}" target="_blank">Testimonials</a>
+        <a href="{{ url_for('home_page') }}" target="_blank">Featured In</a>
+        <a href="{{ url_for('about_us') }}" target="_blank">About Us</a>
+      </nav>
+    </header>
+    <div class="vid">
+      <video autoplay muted loop id="myVideo">
+        <source
+          src="static/Videos/Free motion background Video - Particles Animation 4K Loop.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <h1>Cryptic: Your Journey to Financial Freedom</h1>
+    </div>
+
+    <div class="coin-list">
+      <h1>More than 2000 enlisted coins...</h1>
+      <img src="static/Images/coin-list.png" />
+    </div>
+
+    <div class="coins-graph">
+      <div class="btc">
+        <div class="float">
+          <a href="https://www.google.com/search?q=btc+price&oq=btc+price&aqs=chrome..69i57.1734j0j1&sourceid=chrome&ie=UTF-8" target="_blank"><img src="static/Images/btc.jpg" alt="bitcoin graph" /></a>
+        </div>
+      </div>
+      <div class="eth">
+        <div class="float">
+          <a href="https://www.google.com/search?q=eth+price&ei=4xjWY_y8IZyeseMPxv6YqAc&ved=0ahUKEwi8upjqmez8AhUcT2wGHUY_BnUQ4dUDCBA&uact=5&oq=eth+price&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIHCAAQsQMQQzIGCAAQBxAeMgoIABCxAxCDARBDMgYIABAHEB4yBggAEAcQHjIGCAAQBxAeMgYIABAHEB4yBggAEAcQHjIFCAAQgAQyBAgAEEM6CggAEEcQ1gQQsAM6BwgAELADEENKBAhBGABKBAhGGABQ1wZYvBRghxdoAXABeACAAYEBiAHuBJIBAzMuM5gBAKABAcgBCsABAQ&sclient=gws-wiz-serp" target="_blank"><img src="static/Images/eth.jpg" alt="etherum graph" /></a>
+        </div>
+      </div>
+      <div class="doge">
+        <div class="float">
+          <a href="https://www.google.com/search?q=doge+price&ei=SBnWY8PqGIObseMPqf-HqAI&ved=0ahUKEwjDrqSamuz8AhWDTWwGHan_ASUQ4dUDCBA&uact=5&oq=doge+price&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIHCAAQsQMQQzIGCAAQBxAeMgYIABAHEB4yCAgAEIAEELEDMgUIABCABDIGCAAQBxAeMgYIABAHEB4yBggAEAcQHjIFCAAQgAQyBggAEAcQHjoKCAAQRxDWBBCwAzoHCAAQsAMQQzoSCC4QxwEQ0QMQyAMQsAMQQxgBOgQIABBDOgoIABCxAxCDARBDOggIABCxAxCRAjoFCAAQkQJKBAhBGABKBAhGGABQfliiD2D7EWgBcAF4AIABwgGIAa4GkgEDMy40mAEAoAEByAELwAEB2gEECAEYCA&sclient=gws-wiz-serp" target="_blank"><img
+            src="static/Images/doge.jpg"
+            alt="doge graph"
+            style="
+              border: 2px solid rgba(13, 1, 19, 0.3);
+              border-radius: 10px;
+              box-shadow: 0 0 30px rgba(26, 5, 37, 0.3);
+            "
+          /></a>
+        </div>
+      </div>
+      <div class="bin">
+        <div class="float">
+          <a href="https://www.google.com/search?q=binanc+price&ei=hBnWY6PJEOqTseMPmc-hwAs&ved=0ahUKEwijm-q2muz8AhXqSWwGHZlnCLgQ4dUDCBA&uact=5&oq=binanc+price&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIICAAQsQMQkQIyBggAEAcQHjIGCAAQBxAeMgUIABCRAjIGCAAQBxAeMgYIABAHEB4yBggAEAcQHjIGCAAQBxAeMgYIABAHEB4yBggAEAcQHjoKCAAQRxDWBBCwAzoHCAAQsAMQQzoSCC4QxwEQ0QMQyAMQsAMQQxgBOgwILhDIAxCwAxBDGAE6BwgAELEDEEM6BAgAEEM6CggAELEDEIMBEEM6CwgAEIAEELEDEIMBOgoIABANEIAEELEDOgcIABANEIAESgQIQRgASgQIRhgAUJwHWNkVYMYcaAFwAXgAgAGGAYgBxAiSAQM0LjaYAQCgAQHIAQzAAQHaAQQIARgI&sclient=gws-wiz-serp" target="_blank"><img
+            src="static/Images/bin.jpg"
+            alt="Binace graph"
+            style="
+              border: 2px solid rgba(16, 2, 24, 0.3);
+              border-radius: 10px;
+              box-shadow: 0 0 30px rgba(26, 5, 37, 0.3);
+            "
+          /></a>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="copy">
+        <img src="static/Images/logo.png" alt="cryptic logo" style="width: 300px;padding: 20px;">
+        <p>Copyright © 2023 by Cryptic, Inc. All rights reserved.</p>
+      </div>
+      <div class="account">
+        <h3>Account</h3>
+        <ul>
+          <li>Create account</li>
+          <li>Sign in</li>
+          <li>iOS app</li>
+          <li>Android app</li>
+        </ul>
+      </div>
+      <div class="company">
+        <h3>Company</h3>
+        <ul>
+          <li>About Cryptic</li>
+          <li>For Business</li>
+          <li>Stock options</li>
+          <li>Career</li>
+        </ul>
+      </div>
+      <div class="resources">
+        <h3>Resources</h3>
+        <ul>
+          <li>Security</li>
+          <li>Help Center</li>
+          <li>Privacy and Terms</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
