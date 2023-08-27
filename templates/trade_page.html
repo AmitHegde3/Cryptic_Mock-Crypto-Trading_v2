@@ -8,6 +8,7 @@
     <link rel="icon" type="image/x-icon" href="static/Images/fevicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link
       href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;700&display=swap"
       rel="stylesheet"
@@ -20,8 +21,8 @@
       <img src="static/Images/logo.png" alt="cryptic logo" style="width: 200px;">
       <nav class="navigation">
         <a href="#">Trade</a>
-        <!-- <a href="https://amithegde3.github.io/Cryptic_Mock-Crypto-Trading/#test" target="_blank">Testimonials</a> -->
-        <a href="{{ url_for('test') }}" target="_blank">Testimonials</a>
+        
+        <a href="{{ url_for('home_page') }}" target="_blank">Testimonials</a>
         <a href="{{ url_for('home_page') }}" target="_blank">Featured In</a>
         <a href="{{ url_for('about_us') }}" target="_blank">About Us</a>
       </nav>
@@ -33,52 +34,88 @@
           type="video/mp4"
         />
       </video>
-      <h1>Cryptic: Your Journey to Financial Freedom</h1>
+      <h1 >Cryptic: Your Journey to Financial Freedom</h1>
     </div>
 
     <div class="coin-list">
       <h1>More than 2000 enlisted coins...</h1>
       <img src="static/Images/coin-list.png" />
     </div>
+<!-- Avilable coin list ----------------------------------------------------------------------------->
+    
+    <div class="d-grid gap-1 col-6 mx-auto coins-graph">
+      <button class="c_butt" type="button">
+        <div class="row">
+          <div class="col-2"></div>
+          <div class=" col-1 mb-1">
+                <img src="static/trade_page_img/Bitcoin.svg.png" alt="btc_logo" class="img-fluid">
+          </div>
+         
+          <div class="col-1">
+            <h3>BTC</h3>
+            <h6>Bitcoin</h6>  
+          </div>
+          <div class="col-8 ps-5">
+            <h4>234000 INR</h4>
+            <h5>1.12%</h3>
+          </div>
+        </div>
+      </button>
+      <button class="c_butt" type="button">
 
-    <div class="coins-graph">
-      <div class="btc">
-        <div class="float">
-          <a href="https://www.google.com/search?q=btc+price&oq=btc+price&aqs=chrome..69i57.1734j0j1&sourceid=chrome&ie=UTF-8" target="_blank"><img src="static/Images/btc.jpg" alt="bitcoin graph" /></a>
+        <div class="row">
+          <div class="col-2"></div>
+          <div class=" col-1 mb-1">
+                <img src="static/trade_page_img/Bitcoin.svg.png" alt="btc_logo" class="img-fluid">
+          </div>
+         
+          <div class="col-1">
+            <h3>BTC</h3>
+            <h6>Bitcoin</h6>  
+          </div>
+          <div class="col-8 ps-5">
+            <h4>234000 INR</h4>
+            <h5>1.12%</h3>
+          </div>
         </div>
-      </div>
-      <div class="eth">
-        <div class="float">
-          <a href="https://www.google.com/search?q=eth+price&ei=4xjWY_y8IZyeseMPxv6YqAc&ved=0ahUKEwi8upjqmez8AhUcT2wGHUY_BnUQ4dUDCBA&uact=5&oq=eth+price&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIHCAAQsQMQQzIGCAAQBxAeMgoIABCxAxCDARBDMgYIABAHEB4yBggAEAcQHjIGCAAQBxAeMgYIABAHEB4yBggAEAcQHjIFCAAQgAQyBAgAEEM6CggAEEcQ1gQQsAM6BwgAELADEENKBAhBGABKBAhGGABQ1wZYvBRghxdoAXABeACAAYEBiAHuBJIBAzMuM5gBAKABAcgBCsABAQ&sclient=gws-wiz-serp" target="_blank"><img src="static/Images/eth.jpg" alt="etherum graph" /></a>
+      </button>
+      <button class="c_butt" type="button">
+        <div class="row">
+          <div class="col-2"></div>
+          <div class=" col-1 mb-1">
+                <img src="static/trade_page_img/Bitcoin.svg.png" alt="btc_logo" class="img-fluid">
+          </div>
+         
+          <div class="col-1">
+            <h3>BTC</h3>
+            <h6>Bitcoin</h6>  
+          </div>
+          <div class="col-8 ps-5">
+            <h4>234000 INR</h4>
+            <h5>1.12%</h3>
+          </div>
         </div>
-      </div>
-      <div class="doge">
-        <div class="float">
-          <a href="https://www.google.com/search?q=doge+price&ei=SBnWY8PqGIObseMPqf-HqAI&ved=0ahUKEwjDrqSamuz8AhWDTWwGHan_ASUQ4dUDCBA&uact=5&oq=doge+price&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIHCAAQsQMQQzIGCAAQBxAeMgYIABAHEB4yCAgAEIAEELEDMgUIABCABDIGCAAQBxAeMgYIABAHEB4yBggAEAcQHjIFCAAQgAQyBggAEAcQHjoKCAAQRxDWBBCwAzoHCAAQsAMQQzoSCC4QxwEQ0QMQyAMQsAMQQxgBOgQIABBDOgoIABCxAxCDARBDOggIABCxAxCRAjoFCAAQkQJKBAhBGABKBAhGGABQfliiD2D7EWgBcAF4AIABwgGIAa4GkgEDMy40mAEAoAEByAELwAEB2gEECAEYCA&sclient=gws-wiz-serp" target="_blank"><img
-            src="static/Images/doge.jpg"
-            alt="doge graph"
-            style="
-              border: 2px solid rgba(13, 1, 19, 0.3);
-              border-radius: 10px;
-              box-shadow: 0 0 30px rgba(26, 5, 37, 0.3);
-            "
-          /></a>
+      </button>
+      <button class="c_butt" type="button">
+        <div class="row">
+          <div class="col-2"></div>
+          <div class=" col-1 mb-1">
+                <img src="static/trade_page_img/Bitcoin.svg.png" alt="btc_logo" class="img-fluid" >
+          </div>
+         
+          <div class="col-1">
+            <h3>BTC</h3>
+            <h6>Bitcoin</h6>  
+          </div>
+          <div class="col-8 ps-5">
+            <h4>234000 INR</h4>
+            <h5>1.12%</h3>
+          </div>
         </div>
-      </div>
-      <div class="bin">
-        <div class="float">
-          <a href="https://www.google.com/search?q=binanc+price&ei=hBnWY6PJEOqTseMPmc-hwAs&ved=0ahUKEwijm-q2muz8AhXqSWwGHZlnCLgQ4dUDCBA&uact=5&oq=binanc+price&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIICAAQsQMQkQIyBggAEAcQHjIGCAAQBxAeMgUIABCRAjIGCAAQBxAeMgYIABAHEB4yBggAEAcQHjIGCAAQBxAeMgYIABAHEB4yBggAEAcQHjoKCAAQRxDWBBCwAzoHCAAQsAMQQzoSCC4QxwEQ0QMQyAMQsAMQQxgBOgwILhDIAxCwAxBDGAE6BwgAELEDEEM6BAgAEEM6CggAELEDEIMBEEM6CwgAEIAEELEDEIMBOgoIABANEIAEELEDOgcIABANEIAESgQIQRgASgQIRhgAUJwHWNkVYMYcaAFwAXgAgAGGAYgBxAiSAQM0LjaYAQCgAQHIAQzAAQHaAQQIARgI&sclient=gws-wiz-serp" target="_blank"><img
-            src="static/Images/bin.jpg"
-            alt="Binace graph"
-            style="
-              border: 2px solid rgba(16, 2, 24, 0.3);
-              border-radius: 10px;
-              box-shadow: 0 0 30px rgba(26, 5, 37, 0.3);
-            "
-          /></a>
-        </div>
-      </div>
+      </button>
     </div>
+
+<!-- Avilable coin list ----------------------------------------------------------------------------->
     <footer class="footer">
       <div class="copy">
         <img src="static/Images/logo.png" alt="cryptic logo" style="width: 300px;padding: 20px;">

@@ -6,9 +6,9 @@ app = Flask(__name__)
 def home_page():
   return render_template('index.html')
 
-@app.route("/")
-def test():
-  return render_template('index.html')
+@app.route("/dashboard")
+def dashboard():
+  return render_template('dashboard.html')
 
 @app.route("/about_us")
 def about_us():

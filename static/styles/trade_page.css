@@ -89,28 +89,32 @@ header {
   color: #f0caa3;
 }
 .coins-graph{
-  background:linear-gradient(#0e0216,#00005c, #c060a1, #f0caa3);
+  background-image: linear-gradient(#0e0216,#0e0216, #f0caa3);
   width:100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   
 }
 
-.btc{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Avilable coins button modification ********************************************************************/
+
+.c_butt{
+  color:white;
+    margin: 10px 30px 10px 30px;
+    background-image: linear-gradient(#f0caa3,#0e0216);
+    opacity:0.5;
+    backdrop-filter: blur(10px); 
+    border:none;
+    border-top: 2px solid rgba(255,255,255,1);
+    border-radius: 30px;
+    box-shadow: 5px 5px 0px  rgba(43, 9, 66, 0.9); 
+    transition:0.5s;
 }
-.eth{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.c_butt:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+    box-shadow: 5px 5px 10px  rgba(43, 9, 66, 0.8);
+    opacity:0.9;
 }
-.doge{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
+/* Avilable coins button modification ********************************************************************/
 .bin{
   display: flex;
   justify-content: center;
@@ -129,6 +133,7 @@ header {
 /* footer */
 
 .footer{
+ 
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1fr;
 background: #f0caa3;
