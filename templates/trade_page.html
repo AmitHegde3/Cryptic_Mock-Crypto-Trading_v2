@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="{{ url_for('static',filename='styles/trade_page.css') }}"/>
   </head>
   
-  <body>
+  <body >
+  <div class='container' id="blur">
     <header>
       <img src="static/Images/logo.png" alt="cryptic logo" style="width: 200px;">
       <nav class="navigation">
@@ -44,7 +45,8 @@
 <!-- Avilable coin list ----------------------------------------------------------------------------->
     
     <div class="d-grid gap-1 col-6 mx-auto coins-graph">
-      <button class="c_butt" type="button">
+    {% for c in coin%}
+      <button class="c_butt" type="button" onclick="toggle()">
         <div class="row">
           <div class="col-2"></div>
           <div class=" col-1 mb-1">
@@ -52,68 +54,25 @@
           </div>
          
           <div class="col-1">
-            <h3>BTC</h3>
-            <h6>Bitcoin</h6>  
+            <h3>{{c['coin_id']}}</h3>
+            <h6>{{c['name']}}</h6>  
           </div>
           <div class="col-8 ps-5">
-            <h4>234000 INR</h4>
-            <h5>1.12%</h3>
+            <h4>{{c['price']}}</h4>
+            <h5>{{c['rate']}}</h3>
           </div>
         </div>
       </button>
-      <button class="c_butt" type="button">
-
-        <div class="row">
-          <div class="col-2"></div>
-          <div class=" col-1 mb-1">
-                <img src="static/trade_page_img/Bitcoin.svg.png" alt="btc_logo" class="img-fluid">
-          </div>
-         
-          <div class="col-1">
-            <h3>BTC</h3>
-            <h6>Bitcoin</h6>  
-          </div>
-          <div class="col-8 ps-5">
-            <h4>234000 INR</h4>
-            <h5>1.12%</h3>
-          </div>
-        </div>
-      </button>
-      <button class="c_butt" type="button">
-        <div class="row">
-          <div class="col-2"></div>
-          <div class=" col-1 mb-1">
-                <img src="static/trade_page_img/Bitcoin.svg.png" alt="btc_logo" class="img-fluid">
-          </div>
-         
-          <div class="col-1">
-            <h3>BTC</h3>
-            <h6>Bitcoin</h6>  
-          </div>
-          <div class="col-8 ps-5">
-            <h4>234000 INR</h4>
-            <h5>1.12%</h3>
-          </div>
-        </div>
-      </button>
-      <button class="c_butt" type="button">
-        <div class="row">
-          <div class="col-2"></div>
-          <div class=" col-1 mb-1">
-                <img src="static/trade_page_img/Bitcoin.svg.png" alt="btc_logo" class="img-fluid" >
-          </div>
-         
-          <div class="col-1">
-            <h3>BTC</h3>
-            <h6>Bitcoin</h6>  
-          </div>
-          <div class="col-8 ps-5">
-            <h4>234000 INR</h4>
-            <h5>1.12%</h3>
-          </div>
-        </div>
-      </button>
+    {% endfor %}
     </div>
+    <script type="text/javascript">
+      function toggle(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var popup = document.getElementById('popup');
+        popup.classList.toggle('active')
+      }
+    </script>
 
 <!-- Avilable coin list ----------------------------------------------------------------------------->
     <footer class="footer">
@@ -148,5 +107,13 @@
         </ul>
       </div>
     </footer>
+  </div>
+  <div id="popup">
+      <h4>Hola Amit here....this is where buy sell thing comes</h4>
+      <p>Testing the page, today could not write DBMS ,sad lyfe</p>
+      <img src="static/Images/stock-market-forex-trading-graph_73426-194.avif" alt='graph'><br>
+      <button type="button" onclick="toggle()">Read more</a>
+  </div>
   </body>
+  
 </html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Bootstrap Support here -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <!--Bootstrap ends here  -->
+    <title>Register</title>
+    <link rel="icon" type="image/x-icon" href="static/images/fevicon.png" />
+    <style>
+      html {
+        font: 16px;
+        scroll-behavior: smooth;
+      }
+      body {
+        background: #0e0216;
+        color: white;
+        min-height: 100vh;
+        font-family: "Merriweather Sans", sans-serif;
+      }
+
+      .circle {
+        position: absolute;
+        border-radius: 50%;
+        background: #f0caa3;
+        animation: ripple 15s infinite;
+        box-shadow: 0px 0px 1px 0px #508fb9;
+      }
+
+      .small {
+        width: 200px;
+        height: 200px;
+        right: -100px;
+        top: -100px;
+      }
+
+      .medium {
+        width: 400px;
+        height: 400px;
+        right: -200px;
+        top: -200px;
+      }
+
+      .large {
+        width: 600px;
+        height: 600px;
+        right: -300px;
+        top: -300px;
+      }
+
+      .xlarge {
+        width: 800px;
+        height: 800px;
+        right: -400px;
+        top: -400px;
+      }
+
+      .xxlarge {
+        width: 1000px;
+        height: 1000px;
+        right: -500px;
+        top: -500px;
+      }
+
+      .shade1 {
+        opacity: 0.1;
+      }
+      .shade2 {
+        opacity: 0.3;
+      }
+
+      .shade3 {
+        opacity: 0.5;
+      }
+
+      .shade4 {
+        opacity: 0.7;
+      }
+
+      .shade5 {
+        opacity: 0.9;
+      }
+
+      @keyframes ripple {
+        0% {
+          transform: scale(0.8);
+        }
+
+        50% {
+          transform: scale(1.2);
+        }
+
+        100% {
+          transform: scale(0.8);
+        }
+      }
+    </style>
+  </head>
+
+  <body class="container">
+    <!-- This is only for ripple animation -->
+    <div class="ripple-background">
+      <div class="circle xxlarge shade1"></div>
+      <div class="circle xlarge shade2"></div>
+      <div class="circle large shade3"></div>
+      <div class="circle mediun shade4"></div>
+      <div class="circle small shade5"></div>
+    </div>
+    <!-- This is only for ripple animation -->
+
+    <h1 class="mt-5">Register new user</h1>
+
+    <form action="/register" method="post">
+      <!-- Email ID  --------------------------------------->
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="ex: xyz@gmail.com"
+          required
+        />
+        <div id="emailHelp" class="form-text" style="color:white;">
+          We'll never share your email with anyone else.
+        </div>
+      </div>
+      <!-- Password  --------------------------------------->
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+          placeholder="!! Must be a secret !!"
+          required
+        />
+      </div>
+      <!--Full name  --------------------------------------->
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Full Name:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="ex: Kattu Korangu / vellam neeranay"
+          required
+        />
+      </div>
+      <!-- Age  --------------------------------------->
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"> Age: </label>
+        <input
+          type="number"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder=" Must be more than 18 !"
+          required
+          min="18"
+        />
+      </div>
+      <!-- Country  --------------------------------------->
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"> Country </label>
+        <select name="cars" id="country">
+          <option value="volvo">India</option>
+          <option value="saab">United States</option>
+          <option value="mercedes">Uganda</option>
+          <option value="audi">Mars</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="align-self: right">
+        Submit
+      </button>
+    </form>
+  </body>
+</html>

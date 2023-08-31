@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cryptic</title>
     <link rel="icon" type="image/x-icon" href="static/images/fevicon.png" />
-    <link rel="icon" type="image/x-icon" href="static/images/fevi-logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -82,7 +81,7 @@
             <div class="login-register">
               <p>
                 Don't have an account?
-                <a href="#" class="register-link">Register</a>
+                <a href="{{ url_for('register') }}" class="register-link">Register</a>
               </p>
             </div>
           </form>

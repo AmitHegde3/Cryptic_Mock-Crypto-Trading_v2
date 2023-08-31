@@ -8,6 +8,9 @@ body{
   font-family: 'Merriweather Sans', sans-serif;
   display: grid;
   grid-template-rows: 1fr 0.1fr 0.9fr 0.4fr;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
 header {
   position: absolute;
@@ -113,7 +116,42 @@ header {
     box-shadow: 5px 5px 10px  rgba(43, 9, 66, 0.8);
     opacity:0.9;
 }
+.container#blur{
+  max-width:100vw;
+  padding:0;
+  margin:0;
+  transition:1s;
+}
+.container#blur.active{
+  max-width:100vw;
+  padding:0;
+  margin:0;
+  filter:blur(10px);
+  pointer-events:none;
+  user-select:none;
+}
 
+#popup{
+  position:fixed;
+  top: 50%; /* Push the top edge down by 50% of the viewport height */
+  left: 50%; /* Push the left edge in by 50% of the viewport width */
+  transform: translate(-50%, -50%); /* means to move the element 50% of its own width to the left, and 50% of its own height up.*/
+  padding:50px;
+  box-shadow: 0 5px 30px rgba(0,0,0,.30);
+  background:#fff;
+  visibility:hidden;
+  opacity:0;
+  transition:0.5s;
+  border-radius:2%;
+  width:60vw;
+  heigth:70vh;
+}
+
+#popup.active{
+  visibility:visible;
+  opacity:1;
+  transition:0.5s;
+}
 /* Avilable coins button modification ********************************************************************/
 .bin{
   display: flex;
