@@ -32,17 +32,20 @@ with engine.connect() as conn:
 #       return dict(rows[0])
 
 
-def add_todo_db(data):
+def add_user(data):
   
   with engine.connect() as conn:
     print("\n\nData is:\n\n", data)
     print("\n\n")
     query = text(
-      "INSERT INTO todo(title,time,slaray) values(:title ,:time ,:salary)")
+      "INSERT INTO account(email,password,name,age,country) values(:email,:password,:name,:age,:country)")
     conn.execute(
-      query, dict(title=data['title'],
-                  time=data['time'],
-                  salary=data['salary']))
+      query, dict(email=data['email'],
+                  password=data['password'],
+                  name=data['name'],
+                  age = data['age'],
+                  country = data['country']
+                 ))
    
     conn.commit()
-    print("\n\n----Updated DB-----\n\n")
+    print("\n\n---- USER ADDED -----\n\n")

@@ -103,6 +103,12 @@
         }
       }
     </style>
+  <script>
+  function showAlert() {
+    var myText = "You are registered now!! You can go back and login Now";
+    alert (myText);
+  }
+  </script>
   </head>
 
   <body class="container">
@@ -118,7 +124,7 @@
 
     <h1 class="mt-5">Register new user</h1>
 
-    <form action="/register" method="post">
+    <form action="showAlert()" method="post">
       <!-- Email ID  --------------------------------------->
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -129,6 +135,7 @@
           aria-describedby="emailHelp"
           placeholder="ex: xyz@gmail.com"
           required
+          name = 'email'
         />
         <div id="emailHelp" class="form-text" style="color:white;">
           We'll never share your email with anyone else.
@@ -143,6 +150,7 @@
           id="exampleInputPassword1"
           placeholder="!! Must be a secret !!"
           required
+          name = 'password'
         />
       </div>
       <!--Full name  --------------------------------------->
@@ -155,6 +163,7 @@
           aria-describedby="emailHelp"
           placeholder="ex: Kattu Korangu / vellam neeranay"
           required
+          name = 'name'
         />
       </div>
       <!-- Age  --------------------------------------->
@@ -168,16 +177,17 @@
           placeholder=" Must be more than 18 !"
           required
           min="18"
+          name = 'age'
         />
       </div>
       <!-- Country  --------------------------------------->
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label"> Country </label>
-        <select name="cars" id="country">
-          <option value="volvo">India</option>
-          <option value="saab">United States</option>
-          <option value="mercedes">Uganda</option>
-          <option value="audi">Mars</option>
+        <select name="country" id="country">
+          <option value="india">India</option>
+          <option value="us">United States</option>
+          <option value="uganda">Uganda</option>
+          <option value="mars">Mars</option>
         </select>
       </div>
 
