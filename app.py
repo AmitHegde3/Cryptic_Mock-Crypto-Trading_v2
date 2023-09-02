@@ -1,5 +1,6 @@
 from flask import Flask, render_template, jsonify,request
-from database import add_user
+from database import add_user,li
+
 Coins = [
   {
     'coin_id':'BTC',
@@ -24,10 +25,7 @@ Coins = [
     'name':'SHIBHA INU',
     'price':'0.0045',
     'rate':'3.45%'
-  },
-
-
-  
+  }, 
 ]
 app = Flask(__name__)
 
@@ -48,10 +46,10 @@ def trade_page():
   return render_template('trade_page.html',coin=Coins)
 
 
-@app.route("/register",methods=['post'])
+@app.route("/register")#,methods=['post'])
 def register():
-  new_data = request.form
-  add_user(new_data.to_dict())
+  # new_data = request.form
+  # add_user(new_data.to_dict())
   return render_template('register_page.html')
 
 
