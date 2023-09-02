@@ -103,10 +103,10 @@
         }
       }
     </style>
-  <script>
+    
+      <script>
   function showAlert() {
-    var myText = "You are registered now!! You can go back and login Now";
-    alert (myText);
+    alert ("User Added! You can go back to Login page now!");
   }
   </script>
   </head>
@@ -124,7 +124,7 @@
 
     <h1 class="mt-5">Register new user</h1>
 
-    <form action="showAlert()" method="post">
+    <form action="/register" method="post">
       <!-- Email ID  --------------------------------------->
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -191,7 +191,7 @@
         </select>
       </div>
 
-      <button type="submit" class="btn btn-primary" style="align-self: right">
+      <button type="submit" class="btn btn-primary" onclick="showAlert()">
         Submit
       </button>
     </form>

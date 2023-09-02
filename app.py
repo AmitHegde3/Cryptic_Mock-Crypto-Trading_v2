@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify,request
-from database import add_user,li
+from database import add_user
 
 Coins = [
   {
@@ -46,10 +46,17 @@ def trade_page():
   return render_template('trade_page.html',coin=Coins)
 
 
-@app.route("/register")#,methods=['post'])
+@app.route("/register", methods=['GET','POST'])
+
 def register():
-  # new_data = request.form
-  # add_user(new_data.to_dict())
+  if request.method == 'POST':
+    new_data = request.form
+        # Insert new_data to database
+    add_user(new_data.to_dict())
+    return 'USER ADDED !! You can go back and Login Now!'
+    # return jsonify(new_data)
+    # return 'success'
+    
   return render_template('register_page.html')
 
 
