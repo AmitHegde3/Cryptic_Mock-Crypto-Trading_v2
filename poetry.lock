@@ -7,6 +7,22 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "certifi"
+version = "2023.7.22"
+description = "Python package for providing Mozilla's CA Bundle."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
+name = "charset-normalizer"
+version = "3.2.0"
+description = "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
+category = "main"
+optional = false
+python-versions = ">=3.7.0"
+
+[[package]]
 name = "click"
 version = "8.1.7"
 description = "Composable command line interface toolkit"
@@ -45,6 +61,22 @@ async = ["asgiref (>=3.2)"]
 dotenv = ["python-dotenv"]
 
 [[package]]
+name = "flask-htmldoom"
+version = "0.2.1"
+description = "htmldoom integration for Flask"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+Flask = "*"
+htmldoom = ">=1"
+
+[package.extras]
+dev = ["pytest-cov (>=2.7.1)", "black (>=19.3b0)", "tox (>=3.12.1)", "pytest (>=4.4.1)"]
+testing = ["pytest (>=4.4.1)", "pytest-cov (>=2.7.1)", "black (>=19.3b0)"]
+
+[[package]]
 name = "greenlet"
 version = "2.0.2"
 description = "Lightweight in-process concurrent programming"
@@ -55,6 +87,29 @@ python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*"
 [package.extras]
 docs = ["sphinx", "docutils (<0.18)"]
 test = ["objgraph", "psutil"]
+
+[[package]]
+name = "htmldoom"
+version = "1.0.1"
+description = "An intuitive, high performance HTML rendering framework"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+pyyaml = "*"
+
+[package.extras]
+dev = ["pyyaml", "pytest (>=4.4.1)", "pytest-cov (>=2.7.1)", "black (>=19.3b0)", "mypy (>=0.710)", "lxml (>=4.3.4)", "tox (>=3.12.1)", "markdown2"]
+testing = ["pyyaml", "pytest (>=4.4.1)", "pytest-cov (>=2.7.1)", "black (>=19.3b0)", "mypy (>=0.710)", "lxml (>=4.3.4)"]
+
+[[package]]
+name = "idna"
+version = "3.4"
+description = "Internationalized Domain Names in Applications (IDNA)"
+category = "main"
+optional = false
+python-versions = ">=3.5"
 
 [[package]]
 name = "itsdangerous"
@@ -85,6 +140,32 @@ description = "Safely add untrusted strings to HTML/XML markup."
 category = "main"
 optional = false
 python-versions = ">=3.7"
+
+[[package]]
+name = "pyyaml"
+version = "6.0.1"
+description = "YAML parser and emitter for Python"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
+name = "requests"
+version = "2.31.0"
+description = "Python HTTP for Humans."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+certifi = ">=2017.4.17"
+charset-normalizer = ">=2,<4"
+idna = ">=2.5,<4"
+urllib3 = ">=1.21.1,<3"
+
+[package.extras]
+socks = ["PySocks (>=1.5.6,!=1.5.7)"]
+use_chardet_on_py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
 name = "sqlalchemy"
@@ -131,6 +212,20 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "urllib3"
+version = "2.0.4"
+description = "HTTP library with thread-safe connection pooling, file post, and more."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+brotli = ["brotli (>=1.0.9)", "brotlicffi (>=0.8.0)"]
+secure = ["certifi", "cryptography (>=1.9)", "idna (>=2.0.0)", "pyopenssl (>=17.1.0)", "urllib3-secure-extra"]
+socks = ["pysocks (>=1.5.6,!=1.5.7,<2.0)"]
+zstd = ["zstandard (>=0.18.0)"]
+
+[[package]]
 name = "werkzeug"
 version = "2.3.7"
 description = "The comprehensive WSGI web application library."
@@ -147,17 +242,25 @@ watchdog = ["watchdog (>=2.3)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "036357384e2c1181c6ffdb1662d7fd3c114d87ac493fe3d8320e15e341dfa6bc"
+content-hash = "74291c16cc7490e7f9eaed1f977f7bff678c0478524a271d93d9c68a8ec6baa4"
 
 [metadata.files]
 blinker = []
+certifi = []
+charset-normalizer = []
 click = []
 colorama = []
 flask = []
+flask-htmldoom = []
 greenlet = []
+htmldoom = []
+idna = []
 itsdangerous = []
 jinja2 = []
 markupsafe = []
+pyyaml = []
+requests = []
 sqlalchemy = []
 typing-extensions = []
+urllib3 = []
 werkzeug = []

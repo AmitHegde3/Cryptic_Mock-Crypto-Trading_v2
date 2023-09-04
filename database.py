@@ -35,8 +35,6 @@ with engine.connect() as conn:
 def add_user(data):
   
   with engine.connect() as conn:
-    # print("\n\nData is:\n\n", data)
-    # print("\n\n")
     query = text(
       "INSERT INTO account(email,password,name,age,country) values(:email,:password,:name,:age,:country)")
     conn.execute(
