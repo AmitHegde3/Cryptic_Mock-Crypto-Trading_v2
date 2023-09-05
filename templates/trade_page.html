@@ -14,7 +14,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="{{ url_for('static',filename='styles/trade_page.css') }}"/>
+  
+  
   </head>
+
   
   <body >
   <div class='container' id="blur">
@@ -45,12 +48,13 @@
 <!-- Avilable coin list ----------------------------------------------------------------------------->
     
     <div class="d-grid gap-1 col-6 mx-auto coins-graph">
+    
     {% for c in coin%}
       <button class="c_butt" type="button" onclick="toggle()">
         <div class="row">
           <div class="col-2"></div>
           <div class=" col-1 mb-1">
-                <img src="static/trade_page_img/Bitcoin.svg.png" alt="btc_logo" class="img-fluid">
+                <img src="static/trade_page_img/{{loop.index}}.png" alt="btc_logo" height="75px">
           </div>
          
           <div class="col-1">
@@ -58,13 +62,14 @@
             <h6>{{c['name']}}</h6>  
           </div>
           <div class="col-8 ps-5">
-            <h4>{{c['price']}}</h4>
-            <h5>{{c['rate']}}</h3>
+            <h4>Price: ₹ {{c['price']}}</h4>
+            <h5>{{c['rate']}} %</h3>
           </div>
         </div>
       </button>
     {% endfor %}
     </div>
+    
     <script type="text/javascript">
       function toggle(){
         var blur = document.getElementById('blur');
@@ -109,10 +114,70 @@
     </footer>
   </div>
   <div id="popup">
-      <h4>Hola Amit here....this is where buy sell thing comes</h4>
-      <p>Testing the page, today could not write DBMS ,sad lyfe</p>
-      <img src="static/Images/stock-market-forex-trading-graph_73426-194.avif" alt='graph'><br>
-      <button type="button" onclick="toggle()">Read more</a>
+      <h3>{{test['BTC'][0]}}</h3> 
+      <p>{{test['BTC'][1]}}</p>
+    <h3>Current price: ₹{{test['BTC'][2]}}</h3>
+     <!-- Test graph -------------------------------------------------------------------------------->
+    <div class="tradingview-widget-container">
+  <div id="tv-medium-widget"></div>
+  <div class="tradingview-widget-copyright"><h6>Cryptic</h6></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  <script type="text/javascript">
+  new TradingView.MediumWidget(
+  {
+  "container_id": "tv-medium-widget",
+  "symbols": [
+    [
+      "BTC",
+      "COINBASE:BTCUSD|12m"
+    ],
+    [
+      "ETH",
+      "COINBASE:ETHUSD|12m"
+    ]
+  ],
+  "greyText": "Cryptic",
+  "gridLineColor": "#e9e9ea",
+  "fontColor": "#83888D",
+  "underLineColor": "#dbeffb",
+  "trendLineColor": "#4bafe9",
+  "width": "100%",
+  "height": "100%",
+  "locale": "en"
+}
+  );
+  </script>
+</div>
+    <!-- Test graph -------------------------------------------------------------------------------->
+
+    <!-- Form to buy and sell -------------------------------------------------------------------------------->
+    <form action="/bought" method="post">
+      <label for="exampleInputEmail1" class="form-label">Enter the amount of bitcoin </label>
+        <input
+          type="number"
+          placeholder=" The amount of bitcoin "
+          required
+          name = 'buy_amt'
+        />
+      <button type="submit" class="btn btn-success" style="margin:10px;">BUY</button>
+    </form>
+    <!-- Form to buy and sell -------------------------------------------------------------------------------->
+
+    <!-- Form to buy and sell -------------------------------------------------------------------------------->
+    <form action="/sold" method="post">
+      <label for="exampleInputEmail1" class="form-label">Enter the amount of bitcoin</label>
+        <input
+          type="number"
+          placeholder=" The amount of bitcoin "
+          required
+          name = 'sell_amt'
+        />
+      <button type="submit" class="btn btn-danger" style="margin:10px;">SELL</a>
+    </form>
+    <!-- Form to buy and sell -------------------------------------------------------------------------------->
+    
+   
+     <br> <button type="button" onclick="toggle()" class="btn btn-secondary" style="margin:10px;">Go Back</button>
   </div>
   </body>
   

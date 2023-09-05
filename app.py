@@ -1,50 +1,43 @@
-from flask import Flask, render_template, json, request, redirect, session
-from sqlalchemy import create_engine, text
-import os
-from database import add_user
+from flask import Flask, render_template, json, request, redirect, session,url_for
+from database import *
+from coin_api import coin
 
-my_secret = os.environ['DB_CONNECTION_STRING']
-#this info is senstive never share it in github!!
-engine = create_engine(my_secret)
+
 
 Coins = [
   {
-    'coin_id': 'BTC',
-    'name': 'Bitcoin',
-    'price': '2340000',
-    'rate': '1.12%'
+    'coin_id': coin['BTC'][0], # ex : btc
+    'name': coin['BTC'][1], # ex : bitcoin
+    'price': coin['BTC'][2],
+    'rate': coin['BTC'][3],
+    
   },
   {
-    'coin_id': 'ETH',
-    'name': 'Etherum',
-    'price': '146000',
-    'rate': '5.56%'
+    'coin_id': coin['ETH'][0],
+    'name': coin['ETH'][1],
+    'price': coin['ETH'][2],
+    'rate': coin['ETH'][3],
   },
   {
-    'coin_id': 'DOGE',
-    'name': 'DOGE Coin',
-    'price': '5.56 INR',
-    'rate': '6.7%'
+    'coin_id': coin['USDT'][0],
+    'name': coin['USDT'][1],
+    'price': coin['USDT'][2],
+    'rate': coin['USDT'][3],
   },
   {
-    'coin_id': 'SHIB',
-    'name': 'SHIBHA INU',
-    'price': '0.0045',
-    'rate': '3.45%'
+    'coin_id': coin['BNB'][0],
+    'name': coin['BNB'][1],
+    'price': coin['BNB'][2],
+    'rate': coin['BNB'][3],
   },
 ]
 app = Flask(__name__)
 
-
+#----------------------------------------------------------------- God(ME) works here don't touch this section --------------------------------------------
 @app.route("/")
 def home_page():
-  return render_template('index.html')
-
-
-@app.route("/dashboard")
-def dashboard():
-  return render_template('dashboard.html')
-
+  return render_template('index.html',)
+  
 
 @app.route("/about_us")
 def about_us():
@@ -53,7 +46,7 @@ def about_us():
 
 @app.route("/trade_page")
 def trade_page():
-  return render_template('trade_page.html', coin=Coins)
+  return render_template('trade_page.html', coin=Coins,test=coin)
 
 
 @app.route("/register", methods=['GET', 'POST'])
@@ -63,42 +56,59 @@ def register():
     # Insert new_data to database
     add_user(new_data.to_dict())
     return 'USER ADDED !! You can go back and Login Now!'
+    # 'USER ADDED !! You can go back and Login Now!', 
     # return jsonify(new_data)
     # return 'success'
-
   return render_template('register_page.html')
 
 
-@app.route('/validateLogin', methods=['POST'])
-def validateLogin():
-  if request.method == 'POST' and 'email' in request.form and 'password' in request.form:
-    email = request.form['email']
-    password = request.form['password']
-    with engine.connect() as conn:
-      result = conn.execute(
-        'SELECT * FROM accounts WHERE email = %s AND password = %s', (
-          email,
-          password,
-        ))
-      account = result.fetchone()
-      if account:
-        session['loggedin'] = True
-        session['id'] = account['id']  # Corrected field name to 'id'
-        session['email'] = account['email']  # Corrected field name to 'email'
-        return render_template('dashboard.html')
-  return render_template('index.html')
+@app.route("/bought", methods=['GET', 'POST'])
+def bought():
+  if request.method == 'POST':
+    bought_amt = request.form
+    total_amt = int(bought_amt.to_dict()['buy_amt']) * int(coin['BTC'][2]) #total amount  = quantity * current price
+    # print(total_amt)
+    # print("\n\n",bought_amt)
+    # print(type(bought_amt),"\n\n")
+    # print("\n\n",bought_amt.to_dict()['buy_amt'],"\n\n")
+  
+    buy(total_amt)
+    return 'Congratulation you have bought Bitcoin'
+    # 'USER ADDED !! You can go back and Login Now!', 
+    # return jsonify(new_data)
+    # return 'success'
+
+@app.route("/sold", methods=['GET', 'POST'])
+def sold():
+  if request.method == 'POST':
+    sold_amt = request.form
+    total_amt = int(sold_amt.to_dict()['sell_amt']) * int(coin['BTC'][2])
+    sell(total_amt)
+    return 'Congrats You have sold Bitcoin '
+    # 'USER ADDED !! You can go back and Login Now!', 
+    # return jsonify(new_data)
+    # return 'success'
+
+#----------------------------------------------------------------- God(ME) works here don't touch this section --------------------------------------------
+
+@app.route("/dashboard",methods=['GET', 'POST'])
+
+def dashboard():
+  if request.method == 'POST':
+    print("User retrieved!\n")
+    data = request.form 
+    validate(data.to_dict())
+    return render_template('dashboard.html')
+    
+  return render_template('index.html') 
 
 
-@app.route('/validateLogin/redirects')
-def redirects():
-  if 'loggedin' in session:
-    with engine.connect() as conn:
-      result = conn.execute('SELECT * FROM accounts WHERE id = %s',
-                            (session['id'], ))
-      account = result.fetchone()
-    return render_template('dashboard.html', account=account)
-  return render_template('index.html')
 
+@app.route('/test')
+
+def test():
+  return render_template('test.html')
+  
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0', debug=True)

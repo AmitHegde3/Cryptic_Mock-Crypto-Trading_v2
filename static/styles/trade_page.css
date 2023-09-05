@@ -132,19 +132,20 @@ header {
 }
 
 #popup{
+  color:white;
   position:fixed;
   top: 50%; /* Push the top edge down by 50% of the viewport height */
   left: 50%; /* Push the left edge in by 50% of the viewport width */
   transform: translate(-50%, -50%); /* means to move the element 50% of its own width to the left, and 50% of its own height up.*/
   padding:50px;
   box-shadow: 0 5px 30px rgba(0,0,0,.30);
-  background:#fff;
+  background:rgba(255,255,255,.3);
   visibility:hidden;
   opacity:0;
   transition:0.5s;
   border-radius:2%;
-  width:60vw;
-  heigth:70vh;
+  width:80vw;
+  heigth:95vh;
 }
 
 #popup.active{

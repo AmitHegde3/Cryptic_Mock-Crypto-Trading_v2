@@ -41,13 +41,13 @@
           >About Us</a
         >
         <button class="btn-login">Login</button>
+    
       </nav>
     </header>
 
     <!-- -----------------------------------------------------------------------------------------------
         Parallax and Login
----------------------------------------------------------------------------------------------------->
-
+-->
     <div class="back-img">
       <img
         src="static/images/BEAR_BULL.jpg"
@@ -61,23 +61,22 @@
       <div class="wrapper">
         <span class="icon-close"><ion-icon name="close"></ion-icon></span>
         <div class="form-box login">
-          <h2>Login</h2>
-          <form action="/validateLogin" method="post" >
+            <form action="/dashboard" method="post" >
             <div class="input-box">
               <span class="icon"><ion-icon name="mail"></ion-icon></span>
-              <input type="email" required />
+              <input type="email" name="email" id="email" required />
               <label>Email</label>
             </div>
             <div class="input-box">
               <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-              <input type="password" required />
+              <input type="password" name="password" id="password" required />
               <label>Password</label>
             </div>
             <div class="remember-forget">
               <label><input type="checkbox" />Remember me</label>
               <a href="#">Forgot Password?</a>
             </div>
-            <button type="submit" class="login-btn">Login</button>
+            <button type="submit" class="login-btn" value="login" >Login</button>
             <div class="login-register">
               <p>
                 Don't have an account?
@@ -88,6 +87,12 @@
         </div>
       </div>
     </div>
+
+        
+  <!--  
+---------------------------------------------------------------------------------------------------->
+
+   
 
     <!-- -----------------------------------------------------------------------------------------------
         Hero Section
