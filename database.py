@@ -43,84 +43,40 @@ def add_user(data):
     conn.commit()
     print("\n\n---- USER ADDED -----\n\n")
 
-def buy(data):
+# def buy(data):
   
-  with engine.connect() as conn:
-    # First get the wallet balance....Just pesudo code for now...
-    result = conn.execute(text("select wallet from account WHERE email=:email"),dict(email=globalemail))
-    prev_val= int(result.all()[0])
-    query = text(
-      "UPDATE account SET wallet=:new_val WHERE email=:email)
-    conn.execute(
-      query, dict(new_val = prev_val - data,
-                  email = globalemail
-                 ))
+#   with engine.connect() as conn:
+#     # First get the wallet balance....Just pesudo code for now...
+#     result = conn.execute(text("select wallet from account WHERE email=:email"),dict(email=globalemail))
+#     prev_val= int(result.all()[0])
+#     query = text(
+#       "UPDATE account SET wallet=:new_val WHERE email=:email)
+#     conn.execute(
+#       query, dict(new_val = prev_val - data,
+#                   email = globalemail
+#                  ))
    
-    conn.commit()
-    print("\n\n---- USER ADDED -----\n\n")
+#     conn.commit()
+#     print("\n\n---- USER ADDED -----\n\n")
     
 #----------------------------------------------------------------- IDIOT(ME) works here don't touch this section....Women dare touch this section -------------------------------------
-# def validate(data):
-#   emailf = data.get('email')
-#   passwordf = data.get('password') 
-#   with engine.connect() as conn:
-#     print("\n\n---------------Connection Established!---------------\n\n")
-#     query = text(""SELECT email, password FROM account WHERE email = :email"")
-#     result = conn.execute(query, {"email1": data['email'], "password1": data['password']})
-#     #conn.execute(query, dict(email=data['email'],
-#                   #password=data['password']))
-#     if email==email1 and password == password1 :
-#       print("User retrieved!\n")
-#     # print(list(row)[0])
+
 
 def validate(data):
-    with engine.connect() as conn:
-        print("\n\n---------------Connection Established!---------------\n\n")
-        
-        query = text("SELECT email, password FROM account WHERE email = :email1 AND password = :password1")
-        
-        result = conn.execute(query, {"email1": data['email'], "password1": data['password']})
-        
-        account = result.fetchone()
-        
-        if account:
-            email_result = account.index(['email'])
-            password_result = account.index(['password'])
-            
-            # Check if the email and password match
-            if email_result == data['email'] and password_result == data['password']:
-                print("User retrieved and email/password match!\n")
-            else:
-                print("User retrieved, but email/password do not match!\n")
-        else:
-            print("User not found in the database!\n")
+  emailf = data.get('email')
+  passwordf = data.get('password') 
+  with engine.connect() as conn:
+    print("\n\n---------------Connection Established!---------------\n\n")
+    query = text("SELECT email, password FROM account WHERE email=:email")
+    result = conn.execute(query, {"email": emailf})
+    user = result.fetchone()
+    
+    if user:
+      user_email, user_password = user
+      if user_password == passwordf:
+        return 'Login Successful'
+      else:
+        return "Invalid password"
+    print("User retrieved!\n")
 
-
-
-
-    # with engine.connect() as conn:
-  
-    #   print("User retrieved!\n")
-    #   if request.method == 'POST'and 'email' in request.form and 'password' in request.form:
-    #     email = request.form['email']
-    #     password = request.form['password']
-    #     result = conn.execute(
-    #       'SELECT :email,:password FROM accounts WHERE email = %s AND password = %s', (
-    #         email,
-    #         password,
-    #       ))
-    #     account = result.fetchone()
-    #     print("User retrieved!\n")
-    #     if account:
-    #       session['loggedin'] = True
-    #       session['id'] = account['id']  # Corrected field name to 'id'
-    #       session['email'] = account['email']  # Corrected field to'email'
-   
-    #       result = conn.execute('SELECT * FROM accounts WHERE id = %s',
-    #                           (session['id'], ))
-    #       account = result.fetchone()
-    #   conn.commit()
-    #   print("User retrieved!\n")
-  
-
-# trying differnt method
+#Fucking Finally!!!! @idiothegde done. atlastttttttttttttttt......

@@ -97,8 +97,8 @@ def dashboard():
   if request.method == 'POST':
     print("User retrieved!\n")
     data = request.form 
-    validate(data.to_dict())
-    return render_template('dashboard.html')
+    if validate(data.to_dict()) == 'Login Successful':
+      return render_template('dashboard.html')
     
   return render_template('index.html') 
 
