@@ -66,17 +66,19 @@ def register():
 def bought():
   if request.method == 'POST':
     bought_amt = request.form
-    total_amt = int(bought_amt.to_dict()['buy_amt']) * int(coin['BTC'][2]) #total amount  = quantity * current price
+    total_amt = float(bought_amt.to_dict()['buy_amt']) * int(coin['BTC'][2]) #total amount  = quantity * current price
     # print(total_amt)
     # print("\n\n",bought_amt)
     # print(type(bought_amt),"\n\n")
     # print("\n\n",bought_amt.to_dict()['buy_amt'],"\n\n")
+    bool = buy(total_amt)
+    if(bool):
+      print("\n\n---- Wallet value updated -----\n\n")
+      sta = 'Congratulation you have bought '+ str(float(bought_amt.to_dict()['buy_amt'])) + ' Bitcoin'
+      return sta
+    else:
+      return 'Low balance!!'
   
-    buy(total_amt)
-    return 'Congratulation you have bought Bitcoin'
-    # 'USER ADDED !! You can go back and Login Now!', 
-    # return jsonify(new_data)
-    # return 'success'
 
 @app.route("/sold", methods=['GET', 'POST'])
 def sold():
