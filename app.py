@@ -3,6 +3,7 @@ from database import *
 from coin_api import coin
 
 
+app = Flask(__name__)
 
 Coins = [
   {
@@ -31,7 +32,7 @@ Coins = [
     'rate': coin['BNB'][3],
   },
 ]
-app = Flask(__name__)
+
 
 #----------------------------------------------------------------- God(ME) works here don't touch this section --------------------------------------------
 @app.route("/")
@@ -78,9 +79,9 @@ def bought():
       # Adding the bought coin in my_coin table
       add_coin(ac_id,'BTC',total_amt,amt_coin)
       sta = 'Congratulation you have bought '+ str(float(bought_amt.to_dict()['buy_amt'])) + ' Bitcoin'
-      return sta
+      return render_template('order.html',text=sta)
     else:
-      return 'Low balance!!'
+      return render_template('order.html',text="Low Balance!!")
   
 
 @app.route("/sold", methods=['GET', 'POST'])
@@ -112,7 +113,7 @@ def dashboard():
 @app.route('/test')
 
 def test():
-  return render_template('test.html')
+  return render_template('test.html',text="Hello")
   
 
 if __name__ == "__main__":
