@@ -49,10 +49,11 @@ def buy(data):
     # First get the wallet balance....Just pesudo code for now...
     # print("\n\nEmail:",emailf)
     # test = "hegdeamit21@gmail.com"
-    result = conn.execute(text("select wallet from account WHERE email=:x"),{'x':emailf})
+    result = conn.execute(text("select wallet,ac_id from account WHERE email=:x"),{'x':emailf})
 
     for r in result.all():
       test_val = list(r)[0]
+      id = list(r)[1]
       
     print("\n\nVal: ",test_val)
     # print("\n\nType : ",type(result.all()))  it's a list
@@ -67,12 +68,33 @@ def buy(data):
                    ))
      
       conn.commit()
-      return True
+      return True,id
       
     else:
-      return False
+      return False,0
     
-    
+#----------------------------------------------------------------- Add sell function here ------------------------------------
+
+#----------------------------------------------------------------- Add sell function here ------------------------------------
+
+#----------------------------------------------------------------- Add coin function ------------------------------------
+
+def add_coin(id,name,price,amt):
+  with engine.connect() as conn:
+    query = text(
+      "INSERT INTO my_coins(ac_id,c_name,bought_price,amount_of_coin) values(:i,:x,:y,:z)")
+    conn.execute(
+      query, dict(
+                  i = id,
+                  x=name,
+                  y = price,
+                  z = amt
+                 ))
+   
+    conn.commit()
+    print("\n\n---- My Coins updated -----\n\n")
+#----------------------------------------------------------------- Add coin function ------------------------------------
+
 #----------------------------------------------------------------- IDIOT(ME) works here don't touch this section....Women dare touch this section ------------------------------------
 
 

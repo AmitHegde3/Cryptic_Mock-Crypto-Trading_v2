@@ -66,14 +66,17 @@ def register():
 def bought():
   if request.method == 'POST':
     bought_amt = request.form
-    total_amt = float(bought_amt.to_dict()['buy_amt']) * int(coin['BTC'][2]) #total amount  = quantity * current price
+    amt_coin = float(bought_amt.to_dict()['buy_amt'])
+    total_amt =  amt_coin * int(coin['BTC'][2]) #total amount  = quantity * current price
     # print(total_amt)
     # print("\n\n",bought_amt)
     # print(type(bought_amt),"\n\n")
     # print("\n\n",bought_amt.to_dict()['buy_amt'],"\n\n")
-    bool = buy(total_amt)
+    bool,ac_id = buy(total_amt)
     if(bool):
       print("\n\n---- Wallet value updated -----\n\n")
+      # Adding the bought coin in my_coin table
+      add_coin(ac_id,'BTC',total_amt,amt_coin)
       sta = 'Congratulation you have bought '+ str(float(bought_amt.to_dict()['buy_amt'])) + ' Bitcoin'
       return sta
     else:
