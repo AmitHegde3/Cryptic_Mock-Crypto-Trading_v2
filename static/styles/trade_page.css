@@ -175,8 +175,9 @@ header {
  
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1fr;
-background: #f0caa3;
-border-top: 2px solid rgba(116, 116, 116, 0.4);
+  background: #f0caa3;
+  border-top: 2px solid rgba(116, 116, 116, 0.4);
+  padding-bottom:20px;
 }
 
 .copy h2{
