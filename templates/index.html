@@ -28,11 +28,6 @@
         Navigation Bar
 ---------------------------------------------------------------------------------------------------->
       <nav class="navigation">
-        <a
-          href="{{ url_for('trade_page') }}"
-          target="_blank"
-          >Trade</a
-        >
         <a href="#test">Testimonials</a>
         <a href="#feat">Featured In</a>
         <a
@@ -238,14 +233,14 @@
               <img
                 class="testimonial-img"
                 alt="Photo of customer Steve Miller"
-                src="static/images/customers/steve.jpg"
+                src="static/images/gettyimages-1229892983-square.jpg"
               />
               <blockquote class="testimonial-text">
                 Cryptic is a life saver! I just started dealing with
                 cryptocurrency and I am already well on my way to making
                 profits!
               </blockquote>
-              <p class="testimonial-name">— Amogh Ananda</p>
+              <p class="testimonial-name">— Elon Musk</p>
             </figure>
 
             <figure class="testimonial">
@@ -375,7 +370,7 @@
         <nav class="nav-col">
           <p class="footer-heading">Account</p>
           <ul class="footer-nav">
-            <li><a class="footer-link" href="#">Create account</a></li>
+            <li><a class="footer-link" href="{{ url_for('register') }}">Create account</a></li>
             <li><a class="footer-link" href="#">Sign in</a></li>
             <li><a class="footer-link" href="#">iOS app</a></li>
             <li><a class="footer-link" href="#">Android app</a></li>
@@ -402,9 +397,7 @@
         </nav>
       </div>
     </footer>
-    <audio autoplay>
-      <source src="static/Music for a Sushi restaurant.mp3" type="audio/mpeg">
-    </audio>
+   
 
     <!-- -----------------------------------------------------------------------------------------------
         Scripted Section

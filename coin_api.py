@@ -18,11 +18,24 @@ coin = {}
 for c in coins:
   # print(c['symbol'], int(c['quote']['INR']['price']))
   # print(c)
-  if(c['symbol']=='BTC'):
-    coin['BTC'] = [c['symbol'],c['slug'],round(int(c['quote']['INR']['price']),2),c['quote']['INR']['percent_change_24h']]
-  elif(c['symbol']=='ETH'):
-    coin['ETH'] = [c['symbol'],c['slug'],c['quote']['INR']['price'],c['quote']['INR']['percent_change_24h']]
-  elif(c['symbol']=='USDT'):
-    coin['USDT'] = [c['symbol'],c['slug'],c['quote']['INR']['price'],c['quote']['INR']['percent_change_24h']]
+  if (c['symbol'] == 'BTC'):
+    coin['BTC'] = [
+      c['symbol'], c['slug'],
+      round(int(c['quote']['INR']['price']), 2),
+      c['quote']['INR']['percent_change_24h']
+    ]
+  elif (c['symbol'] == 'ETH'):
+    coin['ETH'] = [
+      c['symbol'], c['slug'], c['quote']['INR']['price'],
+      c['quote']['INR']['percent_change_24h']
+    ]
+  elif (c['symbol'] == 'USDT'):
+    coin['USDT'] = [
+      c['symbol'], c['slug'], c['quote']['INR']['price'],
+      c['quote']['INR']['percent_change_24h']
+    ]
   else:
-    coin['BNB'] = [c['symbol'],c['slug'],c['quote']['INR']['price'],c['quote']['INR']['percent_change_24h']]
+    coin['BNB'] = [
+      c['symbol'], c['slug'], c['quote']['INR']['price'],
+      c['quote']['INR']['percent_change_24h']
+    ]

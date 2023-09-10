@@ -1,282 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible"
-		content="IE=edge">
-	<meta name="viewport"
-		content="width=device-width,
-				initial-scale=1.0">
-	<title>Cryptic</title>
-	 <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-  <link rel="stylesheet" href="{{ url_for('static',filename='styles/dashboard.css') }}"/>
+    <link href="static/styles/dashboard.css" rel="stylesheet" type="text/css" />
+    <script src="static/script/dscript.js"></script>
 </head>
 
 <body>
+   
 
-	<!-- for header part -->
-	<header>
-
-		<div class="logosec">
-			<div class="logo">Dashboard</div>
-			<img src=
-"static/Images/logo.png"
-				class="icn menuicn"
-				id="menuicn"
-				alt="menu-icon">
-		</div>
-
-		<div class="searchbar">
-			<input type="text"
-				placeholder="Search">
-			<div class="searchbtn">
-			<img src=
-"static/Dashboard/search.png"
-					class="icn srchicn"
-					alt="search-icon">
-			</div>
-		</div>
-
-		<div class="message">
-			<div class="circle"></div>
-			<img src=
-"static/Dashboard/notification.png"
-				class="icn"
-				alt="">
-			<div class="dp">
-			<img src=
-"static/Dashboard/profile.png"
-					class="dpicn"
-					alt="dp">
-			</div>
-		</div>
-
-	</header>
-
-	<div class="main-container">
-		<div class="navcontainer">
-			<nav class="nav">
-				<div class="nav-upper-options">
-					<div class="nav-option option1">
-						<img src=
-"static/Dashboard/dashboard.png"
-							class="nav-img"
-							alt="dashboard">
-						<h3>Dashboard</h3>
-					</div>
-
-					<div class="nav-option option1">
-						<img src=
-"static/Dashboard/Apps.png"
-							class="nav-img"
-							alt="articles">
-						<h3>Apps</h3>
-					</div>
-
-					<div class="nav-option option1">
-						<img src=
-"static/Dashboard/charts.png"
-							class="nav-img"
-							alt="report">
-						<h3>Charts</h3>
-					</div>
-
-					<div class="nav-option option1">
-						<img src=
-"static/Dashboard/plugins.jpg"
-							class="nav-img"
-							alt="institution">
-						<h3>Plugins</h3>
-					</div>
-
-					<div class="nav-option option1">
-						<img src=
-"static/Dashboard/Widgets.png"
-							class="nav-img"
-							alt="blog">
-						<h3>Widget</h3>
-					</div>
-
-					<div class="nav-option option1">
-						<img src=
-"static/Dashboard/Settings.png"
-							class="nav-img"
-							alt="settings">
-						<h3>Settings</h3>
-					</div>
-
-					<div class="nav-option option1">
-						<img src=
-"static/Dashboard/Logout.png"
-							class="nav-img"
-							alt="logout">
-						<h3>Logout</h3>
-					</div>
-
-				</div>
-			</nav>
-		</div>
-		<div class="main">
-
-			<div class="searchbar2">
-				<input type="text"
-					name=""
-					id=""
-					placeholder="Search">
-				<div class="searchbtn">
-				<img src=
-"static/Dashboard/search.png"
-						class="icn srchicn"
-						alt="search-button">
-				</div>
-        
-			</div>
-      <div class="upper-box-container">
-
-				<div class="upper-box">
-					<div class="text">
-						<h2 class="topic-heading">2478</h2>
-						<h2 class="topic">Total Invoices</h2>
-          </div>
-            <h2><img src=
-"static/Dashboard/invoice.jpg" class="nav-img"
-							alt="invoice"></h2>
-					
+    <!-- Header with navigation and buttons -->
+    <header>
+        <nav>
+            <ul>
+               <nav class="navigation">
+        <a
+          href="{{ url_for('trade_page') }}"
+          target="_blank"
+          >Trade</a
+        >
+        <a
+          href="{{ url_for('about_us') }}"
+          target="_blank"
+          >About Us</a
+        >
+        <a
+          href="{{ url_for('') }}"
+          target="_blank"
+          >Home</a
+        >
+        <button class = "btn-login">Wallet</button>
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span class="close" id="closePopup">&times;</span>
+                <h2>Popup Content</h2>
+                <p>This is a sample popup with a blurred background.</p>
+            </div>
         </div>
-  <div class="upper-box">
-					<div class="text">
-						<h2 class="topic-heading">983</h2>
-						<h2 class="topic">Paid Invoices</h2>
+       </ul>
+        </nav>
+    </header>
+
+    <!-- Main content container -->
+    <div class="main-container">
+        <!-- Left side profile and login credentials -->
+        <div class="left-container">
+            <div class="profile">
+                <!-- Your profile content here -->
+                <img src="static/Dashboard/profile1.png" alt="Profile Image">
+                <h3>User Profile</h3>
+            </div>
+            <div class="credentials">
+                <!-- Your login credentials content here -->
+                <h3>Login Credentials</h3>
+                <p>Username: {{data.name}}</p>
+                <p>Email: {{data.email}}</p>
+            </div>
         </div>
-  </div>
-      </div>
-       
-			<div class="box-container">
+      
 
-				<div class="box box1">
-					<div class="text">
-						<h2 class="topic-heading">$824,571.93</h2>
-						<h2 class="topic">Wallet Balance</h2>
-            <h2 class="topic">+0.8% compared to last week</h2>
-            
-					</div>
-        <input type="button" value="Change" class="btn-login" />
-				</div>
-
-				<div class="box box2">
-         
-					<div class="text">
-						<h2 class="topic-heading">Card's Overview</h2>
-						<h2 class="topic">Account</h2>
-            <h2 class="topic">Services</h2>
-            <h2 class="topic">Banks</h2>
-            <h2 class="topic">Others</h2>
-          </div>
-          
-           <span><span></span></span>
-          <div class="wrap">
-          <a href = "#"><div></div></a>
-          <a href="#"><div></div></a>
-          <a href="#"><div></div></a>
-          <a href="#"><div></div></a>
-          <a href="#"><div></div></a>
-          </div>
-    
-					</div>
+        <!-- Right side equal-sized divs -->
+         <div class="row-container">
+        <div class="row-div">
+            <!-- Content for the first div in the row -->
+            <h3>My Coins</h3>
+            <p>Balance: {{data.wallet}}</p>
         </div>
-
-				
-
-			<div class="report-container">
-				<div class="report-header">
-					<h1 class="recent-Articles">Recent Articles</h1>
-					<button class="view">View All</button>
-				</div>
-
-				<div class="report-body">
-					<div class="report-topic-heading">
-						<h3 class="t-op">Article</h3>
-						<h3 class="t-op">Views</h3>
-						<h3 class="t-op">Comments</h3>
-						<h3 class="t-op">Status</h3>
-					</div>
-
-					<div class="items">
-						<div class="item1">
-							<h3 class="t-op-nextlvl">Article 73</h3>
-							<h3 class="t-op-nextlvl">2.9k</h3>
-							<h3 class="t-op-nextlvl">210</h3>
-							<h3 class="t-op-nextlvl label-tag">Published</h3>
-						</div>
-
-						<div class="item1">
-							<h3 class="t-op-nextlvl">Article 72</h3>
-							<h3 class="t-op-nextlvl">1.5k</h3>
-							<h3 class="t-op-nextlvl">360</h3>
-							<h3 class="t-op-nextlvl label-tag">Published</h3>
-						</div>
-
-						<div class="item1">
-							<h3 class="t-op-nextlvl">Article 71</h3>
-							<h3 class="t-op-nextlvl">1.1k</h3>
-							<h3 class="t-op-nextlvl">150</h3>
-							<h3 class="t-op-nextlvl label-tag">Published</h3>
-						</div>
-
-						<div class="item1">
-							<h3 class="t-op-nextlvl">Article 70</h3>
-							<h3 class="t-op-nextlvl">1.2k</h3>
-							<h3 class="t-op-nextlvl">420</h3>
-							<h3 class="t-op-nextlvl label-tag">Published</h3>
-						</div>
-
-						<div class="item1">
-							<h3 class="t-op-nextlvl">Article 69</h3>
-							<h3 class="t-op-nextlvl">2.6k</h3>
-							<h3 class="t-op-nextlvl">190</h3>
-							<h3 class="t-op-nextlvl label-tag">Published</h3>
-						</div>
-
-						<div class="item1">
-							<h3 class="t-op-nextlvl">Article 68</h3>
-							<h3 class="t-op-nextlvl">1.9k</h3>
-							<h3 class="t-op-nextlvl">390</h3>
-							<h3 class="t-op-nextlvl label-tag">Published</h3>
-						</div>
-
-						<div class="item1">
-							<h3 class="t-op-nextlvl">Article 67</h3>
-							<h3 class="t-op-nextlvl">1.2k</h3>
-							<h3 class="t-op-nextlvl">580</h3>
-							<h3 class="t-op-nextlvl label-tag">Published</h3>
-						</div>
-
-						<div class="item1">
-							<h3 class="t-op-nextlvl">Article 66</h3>
-							<h3 class="t-op-nextlvl">3.6k</h3>
-							<h3 class="t-op-nextlvl">160</h3>
-							<h3 class="t-op-nextlvl label-tag">Published</h3>
-						</div>
-
-						<div class="item1">
-							<h3 class="t-op-nextlvl">Article 65</h3>
-							<h3 class="t-op-nextlvl">1.3k</h3>
-							<h3 class="t-op-nextlvl">220</h3>
-							<h3 class="t-op-nextlvl label-tag">Published</h3>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<script src="static/script/dscript.js"></script>
+        <div class="row-div">
+            <!-- Content for the second div in the row -->
+            <h3>Transaction History</h3>
+          <table>
+            <thead>
+                <tr>
+                    <th>Transaction ID</th>
+                    <th>Account id</th>
+                    <th>Coin name</th>
+                    <th>Bought price</th>
+                    <th>Amount of coins purchased</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                
+                    <tr>
+                        <td>{{ data.id }}</td>
+                        <td>{{ data.ac_id }}</td>
+                        <td>{{ data.c_name }}</td>
+                        <td>{{ data.bought_price}}</td>
+                        <td>{{ data.amount_of_coin }}</td>
+                       
+                    </tr>
+               
+            </tbody>
+        </table>
+            <!-- <p>account id:{{data.ac_id}}</p>
+            <p>coin name:{{data.c_name}}</p>
+            <p>Bought price:{{data.bought_price}}</p>
+            <p>Ammount of coin purchased:{{data.amount_of_coin}}</p> -->
+        </div>
+    </div>
+    </div>
 </body>
+
 </html>

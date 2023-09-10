@@ -88,33 +88,65 @@ def bought():
 def sold():
   if request.method == 'POST':
     sold_amt = request.form
-    total_amt = int(sold_amt.to_dict()['sell_amt']) * int(coin['BTC'][2])
-    sell(total_amt)
-    return 'Congrats You have sold Bitcoin '
+    amt_coin = float(sold_amt.to_dict()['sell_amt'])
+    total_amt =  amt_coin * int(coin['BTC'][2])
+    bool,ac_id,remain_amt = sell(total_amt,amt_coin)
+    if(bool):
+      print("\n\n---- Wallet value updated -----\n\n")
+      # Adding the bought coin in my_coin table
+      add_coin(ac_id,'BTC',-total_amt,-amt_coin)
+      sta = 'Congratulation you have sold '+ str(float(sold_amt.to_dict()['sell_amt'])) + ' Bitcoin :)'
+      return render_template('order.html',text=sta)
+    else:
+      sta = "Low Balance!! You have only " + str(round(remain_amt,2)) + " Bitcoin :("
+      return render_template('order.html',text=sta)
+    
     # 'USER ADDED !! You can go back and Login Now!', 
     # return jsonify(new_data)
     # return 'success'
 
 #----------------------------------------------------------------- God(ME) works here don't touch this section --------------------------------------------
 
+# @app.route("/dashboard",methods=['GET', 'POST'])
+
+# def dashboard():
+#   if request.method == 'POST':
+#     print("User retrieved!\n")
+#     data = request.form 
+#     if validate(data.to_dict()):
+#       return render_template('dashboard.html')
+#   return render_template('index.html') 
+
+# @app.route("/dashboard",methods=['GET', 'POST'])
+
+# def dashboard():
+#   if request.method == 'POST':
+#     print("User retrieved!\n")
+#     data = request.form.to_dict()
+#     emailf = data.get("email")
+#     if validate(data):
+#       user_data = fetch_user_data(emailf)
+#       if user_data:
+#         return render_template('dashboard.html', user=user_data)
+#   return render_template('index.html') 
+
 @app.route("/dashboard",methods=['GET', 'POST'])
 
 def dashboard():
   if request.method == 'POST':
     print("User retrieved!\n")
-    data = request.form 
-    if validate(data.to_dict()) == 'Login Successful':
-      return render_template('dashboard.html')
-    
+    data = request.form.to_dict()
+    emailf = data.get("email")
+    if validate(data):
+      user_and_coin_data = fetch_user_data(emailf)
+      if user_and_coin_data:
+        return render_template('dashboard.html', data=user_and_coin_data)
   return render_template('index.html') 
 
 
 
-@app.route('/test')
-
-def test():
-  return render_template('test.html',text="Hello")
-  
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0', debug=True)
+
+ 
