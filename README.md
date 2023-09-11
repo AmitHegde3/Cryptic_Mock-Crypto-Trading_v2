@@ -5,7 +5,7 @@ An online mock crypto trading platform for all users.
 
 It is a Dynamic Database Driven Website.
 
-    Titled ‘Cryptic’, this project is a mock cryptocurrency trading website that combines modern front-end technologies with a robust back-end infrastructure to create a realistic trading experience for users. It serves as an educational and testing platform for individuals interested in cryptocurrency trading and provides valuable insights into the development of financial applications using HTML, CSS, JavaScript, MySQL, and Flask.
+Titled ‘Cryptic’, this project is a mock cryptocurrency trading website that combines modern front-end technologies with a robust back-end infrastructure to create a realistic trading experience for users. It serves as an educational and testing platform for individuals interested in cryptocurrency trading and provides valuable insights into the development of financial applications using HTML, CSS, JavaScript, MySQL, and Flask.
 
 This project presents a mock cryptocurrency trading website designed to simulate the real-world trading experience while utilizing a combination of front-end and back-end technologies.
 
