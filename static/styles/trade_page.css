@@ -102,7 +102,7 @@ header {
 .c_butt{
   color:white;
     margin: 10px 30px 10px 30px;
-    background-image: linear-gradient(#f0caa3,#0e0216);
+    background-image: linear-gradient(#C060A1,#0e0216);
     opacity:0.5;
     backdrop-filter: blur(10px); 
     border:none;

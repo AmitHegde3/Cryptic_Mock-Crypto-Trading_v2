@@ -144,18 +144,18 @@ Containers
 }
 
 .profile {
-  margin-top: 20px;
+  margin-top: 18px;
   text-align: center;
 }
 
 .profile img {
   border-radius: 50%; /* Make the profile image round */
-  width: 70px; /* Adjust the width of the profile image */
-  height: 70px; /* Adjust the height of the profile image */
+  width: 80px; /* Adjust the width of the profile image */
+  height: 80px; /* Adjust the height of the profile image */
 }
 
 .credentials {
-  margin-top: 10px;
+  margin-top: 3px;
   text-align: center;
 }
 

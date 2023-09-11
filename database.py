@@ -133,50 +133,7 @@ def add_coin(id,name,price,amt):
 
 
 #Working----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# def validate(data):
-#   global emailf
-#   emailf = data.get('email')
-#   passwordf = data.get('password') 
-#   with engine.connect() as conn:
-#     print("\n\n---------------Connection Established!---------------\n\n")
-#     query = text("SELECT email, password FROM account WHERE email=:email")
-#     result = conn.execute(query, {"email": emailf})
-#     user = result.fetchone()
-    
-#     if user:
-#       user_email, user_password = user
-#       if user_password == passwordf:
-#         return 'Login Successful!'
-        
-#       else:
-#         return None
-#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Aditi
-# def validate(data):
-#   global emailf
-#   emailf = data.get('email')
-#   passwordf = data.get('password') 
-#   with engine.connect() as conn:
-#     print("\n\n---------------Connection Established!---------------\n\n")
-#     query = text("SELECT email, password FROM account WHERE email=:email")
-#     result = conn.execute(query, {"email": emailf})
-#     user = result.fetchone()
-    
-#     if user:
-#       user_email, user_password = user
-#       if user_password == passwordf:
-#         return 'Login Successful!'
-        
-#       else:
-#         return None
-#     print("User retrieved!\n")
 
-
-#-------------------------------------------------------------
-
-
-
-# # Deekshitha
 # def validate(data):
 #   global emailf
 #   emailf = data.get('email')
@@ -210,6 +167,44 @@ def add_coin(id,name,price,amt):
 #     else:
 #       return None
 
+# def validate(data):
+#   global emailf
+#   emailf = data.get('email')
+#   passwordf = data.get('password') 
+#   with engine.connect() as conn:
+#     print("\n\n---------------Connection Established!---------------\n\n")
+#     query = text("SELECT email, password FROM account WHERE email=:email")
+#     result = conn.execute(query, {"email": emailf})
+#     print('\n\nhooooooooooooooooooooooooo')
+#     user = result.fetchone()
+#     if user:
+#       user_email, user_password = user
+#       if user_password == passwordf:
+#         return 'Login Successful!'
+        
+#       else:
+#         return None
+#     print("User retrieved!\n")
+
+# def fetch_user_data(emailf):
+#   with engine.connect() as conn:
+#     print("\n\n---------------Connection to print names---------------\n\n")
+#     query = text("SELECT ac_id,name,email,wallet FROM account WHERE email=:email")
+#     result = conn.execute(query, {"email": emailf})
+#     user_data = result.fetchone()
+#     if user_data:
+#       ac_id,name,email,wallet = user_data
+#       query = text("SELECT ac_id,c_name,bought_price,amount_of_coin,id FROM my_coins WHERE ac_id=:ac_id")
+#       result = conn.execute(query, {"ac_id": ac_id})
+#       my_coins_data = result.fetchone()
+
+#       if my_coins_data:
+#         ac_id,c_name,bought_price,amount_of_coin,id =my_coins_data
+#         return {"name": name, "email": email ,"wallet":wallet ,"ac_id":ac_id ,"c_name":c_name ,"bought_price":bought_price ,"amount_of_coin":amount_of_coin ,"id":id}
+
+
+#     return{"name": name, "email": email ,"wallet":wallet ,"ac_id":ac_id}
+
 def validate(data):
   global emailf
   emailf = data.get('email')
@@ -221,6 +216,7 @@ def validate(data):
     print('\n\nhooooooooooooooooooooooooo')
     user = result.fetchone()
     if user:
+      
       user_email, user_password = user
       if user_password == passwordf:
         return 'Login Successful!'
@@ -237,28 +233,27 @@ def fetch_user_data(emailf):
     user_data = result.fetchone()
     if user_data:
       ac_id,name,email,wallet = user_data
-      query = text("SELECT ac_id,c_name,bought_price,amount_of_coin,id FROM my_coins WHERE ac_id=:ac_id")
-      result = conn.execute(query, {"ac_id": ac_id})
-      my_coins_data = result.fetchone()
+      query = text("SELECT * FROM my_coins WHERE ac_id=:ac_id  ORDER BY id ASC")
+      result1 = conn.execute(query, {"ac_id": ac_id})
+      # my_coins_data = result.fetchall()
+      my_coins_data = []
+      for row in result1:
+        # ac_id,c_name,bought_price,amount_of_coin,id =result[i]
+        result1_list = list(row)
+        result1_list = {}
+        result1_list["ac_id"] = list(row)[0]
+        result1_list["c_name"] = list(row)[1]
+        result1_list["bought_price"] = list(row)[2]
+        result1_list["amount_of_coin"] = list(row)[3]
+        result1_list["id"] = list(row)[4]
 
-      if my_coins_data:
-        ac_id,c_name,bought_price,amount_of_coin,id =my_coins_data
-        return {"name": name, "email": email,"wallet":wallet,"ac_id":ac_id,"c_name":c_name,"bought_price":bought_price,"amount_of_coin":amount_of_coin,"id":id}
-
-    return None
+        my_coins_data.append(result1_list)
+        
+      return {"name": name, "email": email ,"wallet":wallet ,"ac_id":ac_id ,"transactions": my_coins_data,}
 
 
-# def fetch_user_data1(ac_idf):
-#   with engine.connect() as conn:
-#     print("\n\n---------------Connection to print names---------------\n\n")
-#     query = text("SELECT ac_id,c_name,bought_price,amount_of_coin FROM my_coins WHERE ac_id=:ac_id" )
-#     result1 = conn.execute(query, {"ac_id":ac_idf})
-#     user_data1 = result1.fetchone()
-#     if user_data1:
-#       ac_id,c_name,bought_price,amount_of_coin = user_data1
-      
-#       return {"ac_id":ac_id ,"c_name":c_name ,"bought_price":bought_price , "amount_of_coin" : amount_of_coin}
-#     else:
-#       return None
+    return{"name": name, "email": email ,"wallet":wallet ,"ac_id":ac_id}
+
+
         
 #Fucking Finally!!!! @idiothegde done. atlastttttttttttttttt......

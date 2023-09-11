@@ -112,24 +112,14 @@ def sold():
 # def dashboard():
 #   if request.method == 'POST':
 #     print("User retrieved!\n")
-#     data = request.form 
-#     if validate(data.to_dict()):
-#       return render_template('dashboard.html')
-#   return render_template('index.html') 
-
-# @app.route("/dashboard",methods=['GET', 'POST'])
-
-# def dashboard():
-#   if request.method == 'POST':
-#     print("User retrieved!\n")
 #     data = request.form.to_dict()
 #     emailf = data.get("email")
 #     if validate(data):
-#       user_data = fetch_user_data(emailf)
-#       if user_data:
-#         return render_template('dashboard.html', user=user_data)
+#       user_and_coins_data = fetch_user_data(emailf)
+            
+#       if user_and_coins_data:
+#         return render_template('dashboard.html', data = user_and_coins_data)
 #   return render_template('index.html') 
-
 @app.route("/dashboard",methods=['GET', 'POST'])
 
 def dashboard():
@@ -138,9 +128,10 @@ def dashboard():
     data = request.form.to_dict()
     emailf = data.get("email")
     if validate(data):
-      user_and_coin_data = fetch_user_data(emailf)
-      if user_and_coin_data:
-        return render_template('dashboard.html', data=user_and_coin_data)
+      user_and_coins_data = fetch_user_data(emailf)
+            
+      if user_and_coins_data:
+        return render_template('dashboard.html',data=user_and_coins_data)
   return render_template('index.html') 
 
 

@@ -12,6 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+  <link rel="icon" type="image/x-icon" href="static/images/fevicon.png" />
     <link href="static/styles/dashboard.css" rel="stylesheet" type="text/css" />
     <script src="static/script/dscript.js"></script>
 </head>
@@ -24,6 +25,8 @@
         <nav>
             <ul>
                <nav class="navigation">
+                 
+    
         <a
           href="{{ url_for('trade_page') }}"
           target="_blank"
@@ -34,17 +37,17 @@
           target="_blank"
           >About Us</a
         >
-        <a
-          href="{{ url_for('') }}"
-          target="_blank"
-          >Home</a
+                 <a
+          href="https://crypticmock-crypto-tradingv2.amithegde31.repl.co/"
+          >Logout</a
         >
+                 
         <button class = "btn-login">Wallet</button>
         <div id="popup" class="popup">
             <div class="popup-content">
                 <span class="close" id="closePopup">&times;</span>
-                <h2>Popup Content</h2>
-                <p>This is a sample popup with a blurred background.</p>
+                <h2>Wallet</h2>
+                <p>Balance:{{data.wallet}}</p>
             </div>
         </div>
        </ul>
@@ -57,10 +60,10 @@
         <div class="left-container">
             <div class="profile">
                 <!-- Your profile content here -->
-                <img src="static/Dashboard/profile1.png" alt="Profile Image">
+                <img src="static/Dashboard/profile1.png" alt="Profile Image" style="height:100px;width:100px;">
                 <h3>User Profile</h3>
             </div>
-            <div class="credentials">
+            <div class="credentials" style="color:white;">
                 <!-- Your login credentials content here -->
                 <h3>Login Credentials</h3>
                 <p>Username: {{data.name}}</p>
@@ -74,7 +77,7 @@
         <div class="row-div">
             <!-- Content for the first div in the row -->
             <h3>My Coins</h3>
-            <p>Balance: {{data.wallet}}</p>
+            <p>Coin : BTC (Bitcoin)</p>
         </div>
         <div class="row-div">
             <!-- Content for the second div in the row -->
@@ -91,16 +94,26 @@
                 </tr>
             </thead>
             <tbody>
-                
-                    <tr>
-                        <td>{{ data.id }}</td>
-                        <td>{{ data.ac_id }}</td>
-                        <td>{{ data.c_name }}</td>
-                        <td>{{ data.bought_price}}</td>
-                        <td>{{ data.amount_of_coin }}</td>
+              <!-- <pre>
+                    {{ data.transactions }}
+                              </pre> -->
+                {% for transactio in data.transactions %}
+                  
+                  <tr>
+                    <td>{{ transactio.id}}</td>
+                    <td>{{ transactio.ac_id }}</td>
+                    <td>{{ transactio.c_name }}</td>
+                    <td>{{ transactio.bought_price}}</td>
+                    <td>{{ transactio.amount_of_coin }}</td>
+                       <!-- <td>{{ transactio.4 }}</td>
+                      <td>{{ transactio.0 }}</td>
+                      <td>{{ transactio.1 }}</td>
+                      <td>{{ transactio.2}}</td>
+                      <td>{{ transactio.3}}</td> -->
                        
                     </tr>
-               
+          
+                {% endfor %}
             </tbody>
         </table>
             <!-- <p>account id:{{data.ac_id}}</p>
