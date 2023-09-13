@@ -107,19 +107,6 @@ def sold():
 
 #----------------------------------------------------------------- God(ME) works here don't touch this section --------------------------------------------
 
-# @app.route("/dashboard",methods=['GET', 'POST'])
-
-# def dashboard():
-#   if request.method == 'POST':
-#     print("User retrieved!\n")
-#     data = request.form.to_dict()
-#     emailf = data.get("email")
-#     if validate(data):
-#       user_and_coins_data = fetch_user_data(emailf)
-            
-#       if user_and_coins_data:
-#         return render_template('dashboard.html', data = user_and_coins_data)
-#   return render_template('index.html') 
 @app.route("/dashboard",methods=['GET', 'POST'])
 
 def dashboard():
